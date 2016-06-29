@@ -23,4 +23,6 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
   */
+
+  this.get('/events');
 }

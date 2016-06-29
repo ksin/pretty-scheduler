@@ -1,0 +1,10 @@
+<h1>You are on events route</h1>
+
+{{#each model as |event|}}
+  <p>Name: {{event.name}}</p>
+  <p>Details: {{event.details}}</p>
+  <p>Location: {{event.location}}</p>
+  <p>Secret: {{event.secret}}</p>
+  <p>StartDate: {{event.startDate}}</p>
+  <p>EndDate: {{event.endDate}}</p>
+{{/each}}
