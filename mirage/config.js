@@ -26,4 +26,5 @@ export default function() {
 
   this.get('/events');
   this.get('/events/:id');
+  this.post('events');
 }

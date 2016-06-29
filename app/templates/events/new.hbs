@@ -1,1 +1,22 @@
 You are on the new page!!!
+
+<ul>
+  <li>
+    <label>Name of Event</label>
+    {{input value=(mut (get model 'name'))}}
+  </li>
+  <li>
+    <label>Event Details</label>
+    {{input value=(mut (get model 'details'))}}
+  </li>
+  <li>
+    <label>Event Location (optional)</label>
+    {{input value=(mut (get model 'location'))}}
+  </li>
+  <li>
+    <label>Event Secret (optional)</label>
+    {{input value=(mut (get model 'secret'))}}
+  </li>
+</ul>
+
+<button {{action "createEvent" model}}>Create Event</button>
