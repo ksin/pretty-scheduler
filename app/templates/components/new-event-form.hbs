@@ -1,0 +1,27 @@
+<ul>
+  <li>
+    <label>Name of Event</label>
+    {{input value=(mut (get event 'name'))}}
+  </li>
+  <li>
+    <label>Event Details</label>
+    {{input value=(mut (get event 'details'))}}
+  </li>
+  <li>
+    <label>Event Location (optional)</label>
+    {{input value=(mut (get event 'location'))}}
+  </li>
+  <li>
+    <label>Event Secret (optional)</label>
+    {{input value=(mut (get event 'secret'))}}
+  </li>
+  <li>
+    <label>Start Date</label>
+    {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate')}}
+
+    <label>End Date</label>
+    {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate')}}
+  </li>
+</ul>
+
+<button {{action "createEvent"}}>Create Event</button>
