@@ -24,7 +24,7 @@ export default Ember.Component.extend({
     },
 
     createEvent() {
-      if(this.get('isValidEvent')) {
+      if (this.get('isValidEvent')) {
         this.sendAction('createEvent', this.get('event'));
       }
     }

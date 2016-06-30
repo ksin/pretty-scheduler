@@ -1,0 +1,22 @@
+{{monthName}} {{year}}
+
+<table>
+  <tbody>
+    <tr>
+      <td>sun</td>
+      <td>mon</td>
+      <td>tue</td>
+      <td>wed</td>
+      <td>thu</td>
+      <td>fri</td>
+      <td>sat</td>
+    </tr>
+    {{#each daysInMonth as |week|}}
+      <tr>
+      {{#each week as |date|}}
+        {{calendar-day tagName="td" date=date}}
+      {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
