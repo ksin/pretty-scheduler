@@ -7,4 +7,4 @@ export default Ember.Mixin.create({
       this.transitionTo('/not-found');
     }
   }
-})
+});
