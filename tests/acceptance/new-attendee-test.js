@@ -17,7 +17,7 @@ test('visiting /events/:id', function(assert) {
     assert.equal(currentURL(), '/events/1');
     assert.equal(find('.event__name').text().trim(), "Day of the Black Sun");
     assert.equal(find('.new-attendee__message').length, 1, "New attendee message is found");
-    assert.equal(find('.month-calendar__heading:contains(February 2016)').length, 1, "February month calendar is found");
-    assert.equal(find('.month-calendar__heading:contains(March 2016)').length, 1, "March month calendar is found");
+    assert.equal(find('.selectable-month__heading:contains(February 2016)').length, 1, "February month calendar is found");
+    assert.equal(find('.selectable-month__heading:contains(March 2016)').length, 1, "March month calendar is found");
   });
 });

@@ -2,7 +2,7 @@ import moduleForIntegration from '../../helpers/module-for-integration';
 import hbs from 'htmlbars-inline-precompile';
 import { test } from 'ember-qunit';
 
-moduleForIntegration('Integration | Component | month-calendar', {
+moduleForIntegration('Integration | Component | selectable-month', {
   beforeEach() {
     this.set('month', 1);
     this.set('startDate', new Date(2016, 1, 10));
@@ -13,7 +13,7 @@ moduleForIntegration('Integration | Component | month-calendar', {
       this.set('updateDatesCalled', this.get('updateDatesCalled') + 1);
     });
     this.render(hbs`
-      {{month-calendar
+      {{selectable-month
           month=month
           startDate=startDate
           endDate=endDate
@@ -23,12 +23,12 @@ moduleForIntegration('Integration | Component | month-calendar', {
 });
 
 test('renders calendar month', function(assert) {
-  assert.equal(this.$('.month-calendar__heading').text(), "February 2016");
+  assert.equal(this.$('.selectable-month__heading').text(), "February 2016");
 });
 
 test('only dates within startDate and endDate range are selectable', function(assert) {
-  assert.ok(this.$('.calendar-day:contains(11)').hasClass('selectable'));
-  assert.ok(this.$('.calendar-day:contains(9)').hasClass('unselectable'));
+  assert.ok(this.$('.selectable-day:contains(11)').hasClass('selectable'));
+  assert.ok(this.$('.selectable-day:contains(9)').hasClass('unselectable'));
 });
 
 test('clicking selectable date', function(assert) {

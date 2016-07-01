@@ -1,1 +1,7 @@
-{{new-attendee-form event=event createAttendee="createAttendee"}}
+{{#if isShowingNewAttendeeCalendar}}
+  {{new-attendee-form event=event createAttendee="createAttendee"}}
+  <button {{action "toggleCalendars"}}>View available dates for attendees</button>
+{{else}}
+  {{aggregate-availabilities event=event}}
+  <button {{action "toggleCalendars"}}>HEY share the dates that you're available OK?</button>
+{{/if}}

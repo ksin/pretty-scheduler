@@ -1,0 +1,8 @@
+{{#each event.months as |month|}}
+  {{aggregate-month
+      month=month
+      dateFrequency=dateFrequency
+      startDate=event.startDate
+      endDate=event.endDate}}
+{{/each}}
+

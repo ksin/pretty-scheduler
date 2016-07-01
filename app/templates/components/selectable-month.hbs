@@ -1,0 +1,28 @@
+<p class="selectable-month__heading">{{monthName}} {{year}}</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>sun</td>
+      <td>mon</td>
+      <td>tue</td>
+      <td>wed</td>
+      <td>thu</td>
+      <td>fri</td>
+      <td>sat</td>
+    </tr>
+    {{#each daysInMonth as |week|}}
+      <tr>
+      {{#each week as |date|}}
+        {{selectable-day
+            tagName="td"
+            date=date
+            startDate=startDate
+            endDate=endDate
+            selectedDates=selectedDates
+            clickedDate="clickedDate"}}
+      {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

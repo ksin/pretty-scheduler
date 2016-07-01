@@ -4,6 +4,8 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   name: attr('string'),
-  availableDates: attr({ defaultValue() => [] }),
+  availableDates: attr({
+    defaultValue() { return []; }
+  }),
   event: belongsTo('event')
 });

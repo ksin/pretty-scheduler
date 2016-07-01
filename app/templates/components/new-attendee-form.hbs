@@ -1,7 +1,7 @@
 <span class="new-attendee__message">HEY share the dates that you're available OK?</span>
 
 {{#each event.months as |month|}}
-  {{month-calendar
+  {{selectable-month
       month=month
       startDate=event.startDate
       endDate=event.endDate

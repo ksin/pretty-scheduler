@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['calendar-day'],
+  classNames: ['selectable-day'],
   classNameBindings: ['selectable:selectable:unselectable', 'selected'],
 
   click() {
@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     }
   },
 
-  selectable: Ember.computed('startDate,endDate', function() {
+  selectable: Ember.computed('startDate,endDate,readOnly', function() {
     return this.get('startDate') <= this.get('date') && this.get('date') <= this.get('endDate');
   }),
 
@@ -23,5 +23,5 @@ export default Ember.Component.extend({
     if (Ember.typeOf(date) === 'date') {
       return this.get('date').getDate();
     }
-  }),
+  })
 });

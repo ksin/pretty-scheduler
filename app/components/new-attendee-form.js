@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   // temporary | should validate on server, obviously.
   isValidSecret: Ember.computed('secret,event.secret', function() {
-    return this.get('secret') === this.get('event.secret');
+    return Ember.isBlank(this.get('event.secret')) || (this.get('secret') === this.get('event.secret'));
   }),
 
   isValidAttendee: Ember.computed('name,secret,isValidSecret', function() {
@@ -15,7 +15,7 @@ export default Ember.Component.extend({
   attendeeObject: Ember.computed('name,availableDates.[]', function() {
     return {
       name: this.get('name'),
-      availableDates: this.get('availableDates'),
+      availableDates: this.get('availableDates') || [],
       event: this.get('event')
     };
   }),
