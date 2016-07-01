@@ -1,31 +1,42 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isValidEvent: Ember.computed('event.{name,startDate,endDate},isValidDateRange', function() {
-    return Ember.isPresent(this.get('event.name')) &&
-            Ember.typeOf(this.get('event.startDate')) === 'date' &&
-            Ember.typeOf(this.get('event.endDate')) === 'date' &&
+  isValidEvent: Ember.computed('name,startDate,endDate,isValidDateRange', function() {
+    return Ember.isPresent(this.get('name')) &&
+            Ember.typeOf(this.get('startDate')) === 'date' &&
+            Ember.typeOf(this.get('endDate')) === 'date' &&
             this.get('isValidDateRange');
   }),
 
-  isValidDateRange: Ember.computed('event.{startDate,endDate}', function() {
-    let startDate = this.get('event.startDate');
-    let endDate = this.get('event.endDate');
+  isValidDateRange: Ember.computed('startDate,endDate', function() {
+    let startDate = this.get('startDate');
+    let endDate = this.get('endDate');
     let maxDate = new Date(startDate.getFullYear(), startDate.getMonth() + 2, 0);
     return startDate <= endDate && endDate <= maxDate;
   }),
 
+  eventObject: Ember.computed('name,location,details,secret,startDate,endDate', function() {
+    return {
+      name: this.get('name'),
+      location: this.get('location'),
+      details: this.get('details'),
+      secret: this.get('secret'),
+      startDate: this.get('startDate'),
+      endDate: this.get('endDate')
+    };
+  }),
+
   actions: {
     selectStartDate(date) {
-      this.set('event.startDate', date);
+      this.set('startDate', date);
     },
     selectEndDate(date) {
-      this.set('event.endDate', date);
+      this.set('endDate', date);
     },
 
     createEvent() {
       if (this.get('isValidEvent')) {
-        this.sendAction('createEvent', this.get('event'));
+        this.sendAction('createEvent', this.get('eventObject'));
       } else {
         console.log('Event is invalid. Implement a validation error.');
       }

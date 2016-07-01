@@ -10,7 +10,7 @@ export default Model.extend({
   secret: attr('string'), // temp | authentication should be done on server, obviously.
   startDate: attr('date'),
   endDate: attr('date'),
-  attendees: hasMany('attendees'),
+  attendees: hasMany('attendee'),
 
   /**
     Counts the months from startDate to endDate
