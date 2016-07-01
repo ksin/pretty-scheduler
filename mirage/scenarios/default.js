@@ -8,5 +8,7 @@ export default function(server) {
   */
 
   // server.createList('post', 10);
-  server.createList('event', 10);
+
+  server.loadFixtures('attendees');
+  server.loadFixtures('events');
 }
