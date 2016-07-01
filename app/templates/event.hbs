@@ -8,5 +8,6 @@
   Details: {{model.details}}
 {{/if}}
 
-{{new-attendee-form event=model createAttendee="createAttendee"}}
-
+{{event-calendars
+    event=model
+    createAttendee="createAttendee"}}
