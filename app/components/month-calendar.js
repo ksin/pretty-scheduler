@@ -3,6 +3,10 @@ import Ember from 'ember';
 const MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export default Ember.Component.extend({
+  selectedDates: Ember.computed(function() {
+    return [];
+  }),
+
   monthName: Ember.computed('month', function() {
     return MonthNames[this.get('month')];
   }),
@@ -58,5 +62,16 @@ export default Ember.Component.extend({
       firstWeek.push('N/A');
     }
     return firstWeek;
+  },
+
+  actions: {
+    clickedDate(date) {
+      if (this.get('selectedDates').contains(date)) {
+        this.get('selectedDates').removeObject(date);
+      } else {
+        this.get('selectedDates').pushObject(date);
+      }
+      this.sendAction('updateAvailableDates', this.get('selectedDates'));
+    }
   }
 });

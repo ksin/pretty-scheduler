@@ -26,6 +26,8 @@ export default Ember.Component.extend({
     createEvent() {
       if (this.get('isValidEvent')) {
         this.sendAction('createEvent', this.get('event'));
+      } else {
+        console.log('Event is invalid. Implement a validation error.');
       }
     }
   }

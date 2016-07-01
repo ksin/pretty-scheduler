@@ -1,15 +1,14 @@
-<h1>{{model.name}}</h1>
+<h1>{{model.event.name}}</h1>
 
-{{#if model.location}}
-  Location: {{model.location}}
+{{#if model.event.location}}
+  Location: {{model.event.location}}
 {{/if}}
 
-{{#if model.details}}
-  Details: {{model.details}}
+{{#if model.event.details}}
+  Details: {{model.event.details}}
 {{/if}}
 
 <span>HEY share the dates that you're available OK?</span>
 
-{{#each model.months as |month|}}
-  {{selectable-calendar month=month startDate=model.startDate endDate=model.endDate}}
-{{/each}}
+{{new-attendee-form attendee=model createAttendee="createAttendee"}}
+

@@ -26,5 +26,11 @@ export default function() {
 
   this.get('/events');
   this.get('/events/:id');
-  this.post('events');
+  this.post('/events/:id');
+  this.put('/events/:id');
+
+  this.get('/attendees');
+  this.get('/attendees/:id');
+  this.post('/attendees');
+  this.put('/attendees/:id');
 }

@@ -1,13 +1,15 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
+import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   name: attr('string'),
   details: attr('string'),
   location: attr('string'),
-  secret: attr('string'),
+  secret: attr('string'), // temp | authentication should be done on server, obviously.
   startDate: attr('date'),
   endDate: attr('date'),
+  attendees: hasMany('attendees'),
 
   /**
     Counts the months from startDate to endDate

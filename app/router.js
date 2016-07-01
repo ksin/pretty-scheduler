@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('new');
   });
   this.route('event', { path: '/events/:event_id' });
+  this.route('attendee', { path: '/attendees/:attendee_id' });
 });
 
 export default Router;

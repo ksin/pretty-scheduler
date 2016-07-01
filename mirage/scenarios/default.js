@@ -8,5 +8,5 @@ export default function(server) {
   */
 
   // server.createList('post', 10);
-  server.createList('event', 10);
+  let events = server.createList('event', 10);
 }

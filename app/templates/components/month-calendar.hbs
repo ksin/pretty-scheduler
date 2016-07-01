@@ -14,7 +14,13 @@
     {{#each daysInMonth as |week|}}
       <tr>
       {{#each week as |date|}}
-        {{calendar-day tagName="td" date=date}}
+        {{calendar-day
+            tagName="td"
+            date=date
+            startDate=startDate
+            endDate=endDate
+            selectedDates=selectedDates
+            clickedDate="clickedDate"}}
       {{/each}}
       </tr>
     {{/each}}
