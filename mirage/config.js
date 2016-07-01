@@ -1,3 +1,5 @@
+import { Response } from 'ember-cli-mirage';
+
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -25,8 +27,18 @@ export default function() {
   */
 
   this.get('/events');
-  this.get('/events/:id');
-  this.post('/events/:id');
+
+  this.get('/events/:id', ({ events }, request) => {
+    let id = request.params.id;
+    let event = events.find(id);
+    if (event) {
+      return event;
+    } else {
+      return new Response(404, {}, {message: 'not found'});
+    }
+  });
+
+  this.post('/events');
   this.put('/events/:id');
 
   this.get('/attendees');

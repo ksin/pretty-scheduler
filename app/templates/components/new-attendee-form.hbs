@@ -1,17 +1,19 @@
-{{#each attendee.event.months as |month|}}
+{{#each event.months as |month|}}
   {{month-calendar
       month=month
-      startDate=attendee.event.startDate
-      endDate=attendee.event.endDate
+      startDate=event.startDate
+      endDate=event.endDate
       onDateClick="updateAvailableDates"}}
 {{/each}}
 
 <label>Name:</label>
-{{input value=attendee.name focus-out=(action "focusOutNameInput")}}
+{{input value=name focus-out=(action "focusOutNameInput")}}
 
 <p>{{helloMessage}}</p>
 
-<label>Do you know the super secret password?</label>
-{{input value=(mut (get this 'secret'))}}
+{{#if event.secret}}
+  <label>Do you know the super secret password?</label>
+  {{input value=(mut (get this 'secret'))}}
+{{/if}}
 
 <button {{action "createAttendee"}}>Submit</button>

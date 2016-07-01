@@ -1,16 +1,10 @@
 import Ember from 'ember';
+import NotFoundMixin from '../mixins/not-found';
 
-export default Ember.Route.extend({
-  model(params) {
-    let attendee = this.store.createRecord('attendee');
-    this.store.findRecord('event', params.event_id).then((event) => {
-      attendee.set('event', event);
-    });
-    return attendee;
-  },
-
+export default Ember.Route.extend(NotFoundMixin, {
   actions: {
-    createAttendee(attendee) {
+    createAttendee(attendeeObject) {
+      let attendee = this.store.createRecord('attendee', attendeeObject);
       attendee.save();
     }
   }

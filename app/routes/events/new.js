@@ -6,9 +6,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    createEvent(event) {
-      event.save().then(() => {
-        this.transitionTo('event', event);
+    createEvent(model) {
+      model.save().then((event) => {
+        this.transitionTo('event', event.id);
       });
     }
   }

@@ -1,14 +1,14 @@
-<h1>{{model.event.name}}</h1>
+<h1>{{model.name}}</h1>
 
-{{#if model.event.location}}
-  Location: {{model.event.location}}
+{{#if model.location}}
+  Location: {{model.location}}
 {{/if}}
 
-{{#if model.event.details}}
-  Details: {{model.event.details}}
+{{#if model.details}}
+  Details: {{model.details}}
 {{/if}}
 
 <span>HEY share the dates that you're available OK?</span>
 
-{{new-attendee-form attendee=model createAttendee="createAttendee"}}
+{{new-attendee-form event=model createAttendee="createAttendee"}}
 
