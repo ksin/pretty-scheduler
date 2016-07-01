@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: ['selectable', 'selected'],
+  classNames: ['calendar-day'],
+  classNameBindings: ['selectable:selectable:unselectable', 'selected'],
 
   click() {
     if (this.get('selectable')) {
@@ -10,10 +11,10 @@ export default Ember.Component.extend({
   },
 
   selectable: Ember.computed('startDate,endDate', function() {
-    return this.get('startDate') < this.get('date') && this.get('date') < this.get('endDate');
+    return this.get('startDate') <= this.get('date') && this.get('date') <= this.get('endDate');
   }),
 
-  selected: Ember.computed('selectedDates,date', function() {
+  selected: Ember.computed('selectedDates.[],date', function() {
     return this.get('selectedDates').contains(this.get('date'));
   }),
 

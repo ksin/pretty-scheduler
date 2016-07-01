@@ -71,7 +71,7 @@ export default Ember.Component.extend({
       } else {
         this.get('selectedDates').pushObject(date);
       }
-      this.sendAction('updateAvailableDates', this.get('selectedDates'));
+      this.sendAction('onDateClick', this.get('selectedDates'));
     }
   }
 });

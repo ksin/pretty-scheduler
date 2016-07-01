@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
@@ -26,7 +27,7 @@ export default Model.extend({
         months.push(a);
       }
       for(let b = 0; b <= endMonth; b++) {
-        months.push(b)
+        months.push(b);
       }
       return months;
     }
