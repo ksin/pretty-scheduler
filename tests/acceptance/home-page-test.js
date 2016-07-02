@@ -1,7 +1,7 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | home');
+moduleForAcceptance('Acceptance | home page');
 
 test('visiting /', function(assert) {
   visit('/');
