@@ -23,7 +23,7 @@ test('creating event - success', function(assert) {
   andThen(() => {
     assert.equal(currentURL(), '/events/1');
     assert.equal(find('.event__name').text(), "Harmonic Convergence");
-    assert.equal(find('.selectable-month__heading').text(), "July 2016");
+    assert.equal(find('.month-calendar__heading--selectable').text().trim(), "July 2016");
   });
 });
 

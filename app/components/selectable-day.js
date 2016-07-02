@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['selectable-day'],
+  classNames: ['month-calendar__day', 'month-calendar__day--selectable'],
   classNameBindings: ['selectable:selectable:unselectable', 'selected'],
 
   click() {

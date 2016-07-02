@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['aggregate-day'],
+  classNames: ['month-calendar__day', 'month-calendar__day--aggregate'],
   classNameBindings: ['frequency'],
 
   percentageOfMaxFrequency: Ember.computed('dateFrequency,date', function() {

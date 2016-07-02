@@ -23,12 +23,12 @@ moduleForIntegration('Integration | Component | selectable-month', {
 });
 
 test('renders calendar month', function(assert) {
-  assert.equal(this.$('.selectable-month__heading').text(), "February 2016");
+  assert.equal(this.$('.month-calendar__heading--selectable').text().trim(), "February 2016");
 });
 
 test('only dates within startDate and endDate range are selectable', function(assert) {
-  assert.ok(this.$('.selectable-day:contains(11)').hasClass('selectable'));
-  assert.ok(this.$('.selectable-day:contains(9)').hasClass('unselectable'));
+  assert.ok(this.$('.month-calendar__day--selectable:contains(11)').hasClass('selectable'));
+  assert.ok(this.$('.month-calendar__day--selectable:contains(9)').hasClass('unselectable'));
 });
 
 test('clicking selectable date', function(assert) {
