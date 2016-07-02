@@ -1,7 +1,7 @@
 {{#if isShowingNewAttendeeCalendar}}
-  {{new-attendee-form event=event createAttendee="createAttendee"}}
-  <button {{action "toggleCalendars"}} class="event-calendars__view-availabilities">View available dates for attendees</button>
+  {{new-attendee-form event=event createAttendee="createAttendee" class="new-attendee"}}
+  <button {{action "toggleCalendars"}} class="event__toggle-calendars">View available dates for attendees</button>
 {{else}}
-  {{attendees-availabilities event=event}}
-  <button {{action "toggleCalendars"}} class="event-calendars__share-dates">HEY share the dates that you're available OK?</button>
+  {{attendees-availabilities event=event class="attendees-availabilities"}}
+  <button {{action "toggleCalendars"}} class="event__toggle-calendars">HEY share the dates that you're available OK?</button>
 {{/if}}

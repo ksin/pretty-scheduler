@@ -1,12 +1,14 @@
-<h1 class="event__name">{{model.name}}</h1>
+<section>
+  <h1 class="event__name">{{model.name}}</h1>
 
-{{#if model.location}}
-  Location: {{model.location}}
-{{/if}}
+  {{#if model.location}}
+    <p class="event__description">Location: {{model.location}}</p>
+  {{/if}}
 
-{{#if model.details}}
-  Details: {{model.details}}
-{{/if}}
+  {{#if model.details}}
+    <p class="event__description">Details: {{model.details}}</p>
+  {{/if}}
+</section>
 
 {{event-calendars
     event=model

@@ -1,21 +1,30 @@
-<span class="new-attendee__message">HEY share the dates that you're available OK?</span>
+<section>
+  <h2 class="new-attendee__header">HEY share the dates that you're available OK?</h2>
 
-{{#each event.months as |month|}}
-  {{selectable-month
-      month=month
-      startDate=event.startDate
-      endDate=event.endDate
-      onDateClick="updateAvailableDates"}}
-{{/each}}
+  <div class="new-attendee__selectable-months">
+    {{#each event.months as |month|}}
+      {{selectable-month
+          month=month
+          startDate=event.startDate
+          endDate=event.endDate
+          onDateClick="updateAvailableDates"
+          class="month-calendar"}}
+    {{/each}}
+  </div>
+</section>
 
-<label>Name:</label>
-{{input value=name focus-out=(action "focusOutNameInput")}}
+<section class="new-attendee__form">
+  <div class="form-item">
+    <label class="form-item__label">Name:</label>
+    {{input value=name focus-out=(action "focusOutNameInput") class="form-item__input"}}
+    <p class="form-item__message">{{helloMessage}}</p>
+  </div>
 
-<p>{{helloMessage}}</p>
-
-{{#if event.secret}}
-  <label>Do you know the super secret password?</label>
-  {{input value=(mut (get this 'secret'))}}
-{{/if}}
-
-<button {{action "createAttendee"}}>Submit</button>
+  <div class="form-item">
+    {{#if event.secret}}
+      <label class="form-item__label">Do you know the super secret password?</label>
+      {{input value=(mut (get this 'secret')) class="form-item__input" type="password"}}
+    {{/if}}
+  </div>
+  <button {{action "createAttendee"}} class="button new-attendee__submit">Submit</button>
+</section>

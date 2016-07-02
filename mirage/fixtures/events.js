@@ -1,6 +1,6 @@
 export default [
   { id: 23,
-    name: 'Summer Splatfest!!',
+    name: 'Summer Splatfest',
     location: "Orlando / Tampa / Sarasota / DISNEY",
     details: "FOODS. SUNSHINE. AWESOME.",
     secret: "squid",
