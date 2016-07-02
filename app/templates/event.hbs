@@ -1,15 +1,20 @@
 <section>
   <h1 class="event__name">{{model.name}}</h1>
 
-  {{#if model.location}}
-    <p class="event__description">Location: {{model.location}}</p>
-  {{/if}}
+  <div class="event__description">
+    {{#if model.location}}
+      <p class="event-description">Location: {{model.location}}</p>
+    {{/if}}
 
-  {{#if model.details}}
-    <p class="event__description">Details: {{model.details}}</p>
-  {{/if}}
+    {{#if model.details}}
+      <p class="event-description">Details: {{model.details}}</p>
+    {{/if}}
+  </div>
 </section>
+
+<span class="divider"></span>
 
 {{event-calendars
     event=model
-    createAttendee="createAttendee"}}
+    createAttendee="createAttendee"
+    class="event-calendars"}}

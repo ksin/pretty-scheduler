@@ -21,7 +21,7 @@ test('visiting /events/:id', function(assert) {
     assert.equal(find('.month-calendar__heading--selectable:contains(March 2016)').length, 1, "March selectable calendar is found");
   });
 
-  click('.event__toggle-calendars');
+  click('.event-calendars__toggle');
 
   andThen(() => {
     assert.equal(find('.new-attendee__header').length, 0, "New attendee header is not found");
