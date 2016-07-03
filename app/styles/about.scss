@@ -2,29 +2,29 @@
 
   &__button {
     display: block;
-    background-color: lighten(black, 90%);
-    color: lighten(black, 70%);
+    border: 2px solid lighten(black, 85%);
+    color: lighten(black, 85%);
     width: 35px;
     height: 35px;
     padding: 8px;
-    font-size: 18px;
+    font-size: 16px;
     position: fixed;
-    right: 15px;
-    bottom: 8px;
-    border-radius: 20px;
+    right: 18px;
+    bottom: 10px;
+    border-radius: 6px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
 
     &:hover {
       @include transition-all;
-      background-color: lighten(black, 80%);
-      color: lighten(black, 50%);
+      border-color: lighten(black, 70%);
+      color: lighten(black, 70%);
     }
 
     &:active {
-      background-color: lighten(black, 70%);
-      color: lighten(black, 30%);
+      border-color: lighten(black, 50%);
+      color: lighten(black, 50%);
     }
   }
 }
