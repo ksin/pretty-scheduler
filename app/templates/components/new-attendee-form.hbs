@@ -31,8 +31,12 @@
     </div>
   </div>
 
-  <div class="form-items__column form-message">
-
-    <p class="form-message__text">{{helloMessage}}</p>
+  <div class="form-items__column">
+    {{#if displayHelloMessage}}
+      <div class="form-message">
+        <p class="form-message__text">{{helloText}}</p>
+        <img src={{helloImg}} class="form-message__img">
+      </div>
+    {{/if}}
   </div>
 </section>
