@@ -1,0 +1,10 @@
+.line-input {
+
+  &__input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    min-width: 100px;
+  }
+}

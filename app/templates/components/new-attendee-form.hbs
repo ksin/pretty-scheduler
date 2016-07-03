@@ -17,13 +17,13 @@
   <div class="form-items__column form-inputs">
     <div class="form-inputs__row form-row">
       <label class="form-row__label">Name:</label>
-      {{input value=name focus-out=(action "focusOutNameInput") class="form-row__input"}}
+      {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input" autoresize=true max-width=220}}
     </div>
 
     <div class="form-inputs__row form-row">
       {{#if event.secret}}
         <label class="form-row__label">Do you know the super secret password?</label>
-        {{input value=(mut (get this 'secret')) class="form-row__input" type="password"}}
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220}}
       {{/if}}
     </div>
     <div class="form-inputs__row form-row">

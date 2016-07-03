@@ -1,19 +1,19 @@
 <ul>
   <li>
     <label>Name</label>
-    {{input value=(mut (get this 'name')) class="new-event__name"}}
+    {{line-input value=(mut (get this 'name')) class="new-event__name"}}
   </li>
   <li>
     <label>Details</label>
-    {{input value=(mut (get this 'details')) class="new-event__details"}}
+    {{line-input value=(mut (get this 'details')) class="new-event__details"}}
   </li>
   <li>
     <label>Location (optional)</label>
-    {{input value=(mut (get this 'location')) class="new-event__location"}}
+    {{line-input value=(mut (get this 'location')) class="new-event__location"}}
   </li>
   <li>
     <label>Secret (optional)</label>
-    {{input value=(mut (get this 'secret')) class="new-event__secret"}}
+    {{line-input value=(mut (get this 'secret')) class="new-event__secret"}}
   </li>
   <li>
     <label>Start Date</label>
