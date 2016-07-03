@@ -11,6 +11,10 @@ Router.map(function() {
   });
   this.route('event', { path: '/events/:event_id' });
   this.route('not-found', { path: '/*path' });
+
+  this.route('test', function() {
+    this.route('event', { path: '/events/:event_id' });
+  });
 });
 
 export default Router;
