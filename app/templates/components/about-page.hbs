@@ -1,1 +1,18 @@
-<span class="about__button">?</span>
+<span class={{iconClass}} {{action "toggleAbout"}}>{{icon}}</span>
+
+{{#if showAbout}}
+  <div class="about__modal-box">
+    <img class="about__img" src="/assets/images/about.gif">
+    <p class="about__text">
+      A scheduler app for finding common availabilities among your friends!
+      <br><br>
+      Create an event and share it with your friends to see what dates work best for everyone. To see an example event, visit: <a target="_blank" href="/events/23">/events/23</a>
+      <br><br>
+      This is a prototype and still very much a WIP. The client-side server is backed by <a target="_blank" href="http://www.ember-cli-mirage.com/">ember-cli-mirage</a>, so none of your data will be persisted after you leave the app.
+      <br><br>
+      Dog gifs are created by foremost dog gif expert, Olivia Huynh.
+      <br><br>
+      Contact: @nisnek on twitter dot com
+    </p>
+  </div>
+{{/if}}
