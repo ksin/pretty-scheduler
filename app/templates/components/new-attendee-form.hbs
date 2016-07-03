@@ -16,13 +16,13 @@
   <div class="form-column form-inputs">
     <div class="form-inputs__row form-row">
       <label class="form-row__label">Name:</label>
-      {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input" autoresize=true max-width=220}}
+      {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input" autoresize=true max-width=220 inputClass="line-input--bordered"}}
     </div>
 
     <div class="form-inputs__row form-row">
       {{#if event.secret}}
         <label class="form-row__label">Do you know the super secret password?</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220}}
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 inputClass="line-input--bordered"}}
       {{/if}}
     </div>
     <div class="form-inputs__row form-row">
@@ -31,6 +31,6 @@
   </div>
 
   <div class="form-column">
-    {{form-message message=message helloText=helloText isVisible=hasMessage}}
+    {{form-message helloText=helloText isVisible=statusMessenger.hasMessage}}
   </div>
 </section>

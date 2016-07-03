@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  message: null,
+  statusMessenger: Ember.inject.service(),
+
   helloText: null,
-  hasMessage: Ember.computed.bool('message'),
 
   // temporary | should validate on server, obviously.
   isValidSecret: Ember.computed('secret,event.secret', function() {
@@ -12,10 +12,10 @@ export default Ember.Component.extend({
 
   isValidAttendee: Ember.computed('name,secret,isValidSecret', function() {
     if (!Ember.isPresent(this.get('name'))) {
-      this.set('message', 'no-name');
+      this.set('statusMessenger.status', 'new-attendee:no-name');
       return false;
     } else if (!this.get('isValidSecret')) {
-      this.set('message', 'wrong-secret');
+      this.set('statusMessenger.status', 'new-attendee:wrong-secret');
       return false;
     }
     return true;
@@ -45,10 +45,10 @@ export default Ember.Component.extend({
     */
     focusOutNameInput(name) {
       if (Ember.isPresent(name)) {
-        this.set('message', 'hello');
+        this.set('statusMessenger.status', 'new-attendee:hello');
         this.set('helloText', `Hi there, ${name}!`);
       } else {
-        this.set('message', null);
+        this.get('statusMessenger').clearStatus();
         this.set('helloText', null);
       }
       this.set('name', name);

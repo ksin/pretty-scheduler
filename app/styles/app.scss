@@ -3,6 +3,7 @@
 @import 'reset';
 @import 'colors';
 
+@import 'mixins';
 @import 'home';
 @import 'event';
 @import 'new-attendee';
@@ -14,6 +15,7 @@
 @import 'divider';
 @import 'line-input';
 @import 'attendees-availabilities';
+@import 'about';
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

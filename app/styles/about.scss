@@ -1,0 +1,30 @@
+.about {
+
+  &__button {
+    display: block;
+    background-color: lighten(black, 90%);
+    color: lighten(black, 70%);
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    font-size: 18px;
+    position: fixed;
+    right: 15px;
+    bottom: 8px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      @include transition-all;
+      background-color: lighten(black, 80%);
+      color: lighten(black, 50%);
+    }
+
+    &:active {
+      background-color: lighten(black, 70%);
+      color: lighten(black, 30%);
+    }
+  }
+}

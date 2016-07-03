@@ -1,13 +1,24 @@
 .button {
   padding: 6px 12px;
-  border: 1px solid lighten(black, 40%);
-  background-color: lighten(black, 40%);
+  border: 1px solid lighten(black, 50%);
+  background-color: lighten(black, 50%);
   color: white;
   border-radius: 4px;
   cursor: pointer;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
   font-size: 14px;
+
+  &:hover {
+    @include transition-all;
+    border: 1px solid lighten(black, 30%);
+    background-color: lighten(black, 30%);
+  }
+
+  &:active {
+    border: 1px solid lighten(black, 20%);
+    background-color: lighten(black, 20%);
+  }
 
   &--inverse {
     border: 1px solid lighten(black, 40%);
