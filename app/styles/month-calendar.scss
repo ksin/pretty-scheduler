@@ -2,7 +2,7 @@
   display: inline-block;
   border: 1px solid lighten(black, 80%);
   margin: 0 20px;
-  border-radius: 2px;
+  border-radius: 4px;
 
   &__heading {
     font-size: 20px;
@@ -18,7 +18,37 @@
   &__day {
     font-size: 18px;
     width: 80px;
-    padding: 2px;
-    padding-bottom: 20px;
+    padding: 10px;
+
+    &--unselectable {
+      background-color: lighten(black, 90%);
+    }
+
+    &--selectable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten(black, 70%);
+        color: white;
+      }
+
+      &:active {
+        background-color: lighten(black, 30%);
+      }
+    }
+
+    &--selected {
+      background-color: lighten(black, 50%);
+      color: white;
+
+      &:hover {
+        background-color: lighten(black, 70%);
+        color: black;
+      }
+
+      &:active {
+        background-color: lighten(black, 30%);
+      }
+    }
   }
 }
