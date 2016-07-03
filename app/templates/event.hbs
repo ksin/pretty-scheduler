@@ -1,13 +1,13 @@
 <section>
   <h1 class="event__name">{{model.name}}</h1>
 
-  <div class="event__description">
+  <div class="event__description event-description">
     {{#if model.location}}
-      <p class="event-description">Location: {{model.location}}</p>
+      <p class="event-description__item">Location: {{model.location}}</p>
     {{/if}}
 
     {{#if model.details}}
-      <p class="event-description">Details: {{model.details}}</p>
+      <p class="event-description__item">Details: {{model.details}}</p>
     {{/if}}
   </div>
 </section>

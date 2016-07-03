@@ -1,15 +1,22 @@
-.event__name {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 40px;
+.event {
+  &__name {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  &__description {
+    margin: 30px auto;
+  }
 }
 
-.event__description {
-  text-align: center;
-  font-size: 16px;
-  margin: 30px auto;
-}
 
 .event-description {
-  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+
+  &__item {
+    margin-top: 15px;
+  }
 }
+

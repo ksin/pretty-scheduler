@@ -1,8 +1,8 @@
 .event-calendars {
-  margin: 30px auto;
+
+  &__toggle {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
-.event-calendars__toggle {
-  display: block;
-  margin: 0 auto;
-}

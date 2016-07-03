@@ -1,16 +1,25 @@
 .month-calendar {
   display: inline-block;
-}
+  border: 1px solid black;
+  margin: 0 20px;
 
-.month-calendar__heading {
-  font-size: 20px;
-}
+  &__heading {
+    font-size: 20px;
+    padding: 15px;
+    margin-left: 30px;
+  }
 
-.month-calendar__year {
-  font-size: 14px;
-}
+  &__year {
+    font-size: 14px;
+    margin-left: 5px;
+  }
 
-.month-calendar__day {
-  font-size: 16px;
+  &__day {
+    font-size: 18px;
+    width: 80px;
+    padding: 10px;
+    padding-bottom: 15px;
+  }
+
 }
 

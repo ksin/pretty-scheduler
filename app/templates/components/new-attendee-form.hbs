@@ -1,5 +1,5 @@
 <section>
-  <h2 class="new-attendee__header">Hey, share the dates that you're available ok?</h2>
+  <h2 class="new-attendee__header">HEY share the dates that you're available OK?</h2>
 
   <div class="new-attendee__selectable-months">
     {{#each event.months as |month|}}
@@ -13,18 +13,25 @@
   </div>
 </section>
 
-<section class="new-attendee__form">
-  <div class="form-item">
-    <label class="form-item__label">Name:</label>
-    {{input value=name focus-out=(action "focusOutNameInput") class="form-item__input"}}
-    <p class="form-item__message">{{helloMessage}}</p>
+<section class="new-attendee__form form-items">
+  <div class="form-items__column form-inputs">
+    <div class="form-inputs__row form-row">
+      <label class="form-row__label">Name:</label>
+      {{input value=name focus-out=(action "focusOutNameInput") class="form-row__input"}}
+    </div>
+
+    <div class="form-inputs__row form-row">
+      {{#if event.secret}}
+        <label class="form-row__label">Do you know the super secret password?</label>
+        {{input value=(mut (get this 'secret')) class="form-row__input" type="password"}}
+      {{/if}}
+    </div>
+    <div class="form-inputs__row form-row">
+      <button {{action "createAttendee"}} class="button">Submit</button>
+    </div>
   </div>
 
-  <div class="form-item">
-    {{#if event.secret}}
-      <label class="form-item__label">Do you know the super secret password?</label>
-      {{input value=(mut (get this 'secret')) class="form-item__input" type="password"}}
-    {{/if}}
+  <div class="form-items__column form-message">
+    <p class="form-message__text">{{helloMessage}}</p>
   </div>
-  <button {{action "createAttendee"}} class="button new-attendee__submit">Submit</button>
 </section>

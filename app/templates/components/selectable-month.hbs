@@ -1,23 +1,24 @@
 <p class="month-calendar__heading month-calendar__heading--selectable">
-  {{monthName}} <span class="month-calendar__year">{{year}}</span>
+  {{monthName}} <sub class="month-calendar__year">{{year}}</sub>
 </p>
 
 <table>
   <tbody>
     <tr>
-      <td>sun</td>
-      <td>mon</td>
-      <td>tue</td>
-      <td>wed</td>
-      <td>thu</td>
-      <td>fri</td>
-      <td>sat</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">sun</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">mon</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">tue</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">wed</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">thu</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">fri</td>
+      <td class="month-calendar__day month-calendar__day--unselectable">sat</td>
     </tr>
     {{#each daysInMonth as |week|}}
       <tr>
       {{#each week as |date|}}
         {{selectable-day
             tagName="td"
+            class="month-calendar__day"
             date=date
             startDate=startDate
             endDate=endDate
