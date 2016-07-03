@@ -1,0 +1,42 @@
+.attendees-availabilities {
+  margin: 20px auto;
+  text-align: center;
+  margin-bottom: 60px;
+
+  &__header {
+    margin: 20px auto;
+  }
+
+  &__legend {
+    margin: 20px auto;
+  }
+}
+
+.legend {
+  display: inline-block;
+  margin: 0 30px;
+  font-size: 16px;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    display: inline-block;
+    background-color: black;
+    position: relative;
+    top: 5px;
+    right: 10px;
+
+    &--everyone {
+      background-color: lighten(black, 30%);
+    }
+
+    &--more {
+      background-color: lighten(black, 50%);
+    }
+
+    &--few {
+      background-color: lighten(black, 70%);
+    }
+  }
+}

@@ -3,6 +3,7 @@
   border: 1px solid lighten(black, 80%);
   margin: 0 20px;
   border-radius: 4px;
+  text-align: center;
 
   &__heading {
     font-size: 20px;
@@ -49,6 +50,18 @@
       &:active {
         background-color: lighten(black, 30%);
       }
+    }
+
+    &--everyone {
+      background-color: lighten(black, 30%);
+    }
+
+    &--more {
+      background-color: lighten(black, 50%);
+    }
+
+    &--few {
+      background-color: lighten(black, 70%);
     }
   }
 }

@@ -13,19 +13,16 @@
 
   &__form {
     margin: 20px auto;
+    text-align: center;
   }
 }
 
-.form-items {
-  text-align: center;
-
-  &__column {
-    vertical-align: top;
-    margin: 0 20px;
-    width: 500px;
-    display: inline-block;
-    height: 260px;
-  }
+.form-column {
+  vertical-align: top;
+  margin: 0 20px;
+  width: 500px;
+  display: inline-block;
+  height: 260px;
 }
 
 .form-row {

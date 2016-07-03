@@ -3,6 +3,8 @@ import Ember from 'ember';
 const MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export default Ember.Mixin.create({
+  classNames: ["month-calendar"],
+
   monthName: Ember.computed('month', function() {
     return MonthNames[this.get('month')];
   }),

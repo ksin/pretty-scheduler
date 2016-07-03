@@ -7,14 +7,13 @@
           month=month
           startDate=event.startDate
           endDate=event.endDate
-          onDateClick="updateAvailableDates"
-          class="month-calendar"}}
+          onDateClick="updateAvailableDates"}}
     {{/each}}
   </div>
 </section>
 
-<section class="new-attendee__form form-items">
-  <div class="form-items__column form-inputs">
+<section class="new-attendee__form">
+  <div class="form-column form-inputs">
     <div class="form-inputs__row form-row">
       <label class="form-row__label">Name:</label>
       {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input" autoresize=true max-width=220}}
@@ -31,7 +30,7 @@
     </div>
   </div>
 
-  <div class="form-items__column">
+  <div class="form-column">
     {{#if displayHelloMessage}}
       <div class="form-message">
         <p class="form-message__text">{{helloText}}</p>
