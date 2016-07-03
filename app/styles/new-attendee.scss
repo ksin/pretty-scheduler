@@ -1,19 +1,18 @@
 .new-attendee {
-  margin: 25px auto;
+  margin: 20px auto;
 
   &__header {
     text-align: center;
     font-size: 16px;
-    margin: 15px auto;
+    margin: 20px auto;
   }
 
   &__selectable-months {
     text-align: center;
-    margin: 20px auto;
   }
 
   &__form {
-    margin: 30px auto;
+    margin: 20px auto;
   }
 }
 
@@ -30,11 +29,16 @@
 
 .form-row {
   &__label {
+    font-size: 16px;
     margin-right: 10px;
   }
 
   &__input {
     display: inline-block;
+  }
+
+  &__button {
+    margin-top: 10px;
   }
 }
 
