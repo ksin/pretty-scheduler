@@ -31,11 +31,6 @@
   </div>
 
   <div class="form-column">
-    {{#if displayHelloMessage}}
-      <div class="form-message">
-        <p class="form-message__text">{{helloText}}</p>
-        <img src={{helloImg}} class="form-message__img">
-      </div>
-    {{/if}}
+    {{form-message message=message helloText=helloText isVisible=hasMessage}}
   </div>
 </section>
