@@ -1,0 +1,18 @@
+.home {
+  &__heading {
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 200px;
+  }
+
+  &__image {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  &__new-event {
+    text-align: center;
+    margin: 80px;
+  }
+}

@@ -28,6 +28,15 @@ export default Ember.Component.extend({
             Ember.typeOf(this.get('endDate')) === 'date';
   }),
 
+  // because we should reward people for filling in everything ;)
+  allInputsFilled: Ember.computed('name,location,details,secret,hasDates', function() {
+    return Ember.isPresent(this.get('name')) &&
+            Ember.isPresent(this.get('location')) &&
+            Ember.isPresent(this.get('details')) &&
+            Ember.isPresent(this.get('secret')) &&
+            this.get('hasDates');
+  }),
+
   eventObject: Ember.computed('name,location,details,secret,startDate,endDate', function() {
     return {
       name: this.get('name'),
@@ -51,8 +60,6 @@ export default Ember.Component.extend({
       this.set('error', null);
       if (this.get('isValidEvent')) {
         this.sendAction('createEvent', this.get('eventObject'));
-      } else {
-        console.log('Event is invalid. Implement a validation error.');
       }
     }
   }

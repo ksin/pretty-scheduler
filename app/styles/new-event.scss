@@ -25,6 +25,7 @@
 
   &__input {
     display: inline-block;
+    margin-left: 5px;
   }
 
   &__date {
@@ -33,22 +34,25 @@
     text-align: center;
   }
 
+  &__submit {
+    text-align: right;
+    width: 800px;
+    margin: 30px auto;
+  }
+
   &__create {
     margin-top: 25px;
     margin-right: 50px;
     display: inline-block;
   }
 
-  &__errors {
+  &__message {
     display: inline-block;
     vertical-align: middle;
     margin-right: 20px;
-    font-size: 18px;
-  }
 
-  &__submit {
-    text-align: right;
-    width: 800px;
-    margin: 30px auto;
+    &--error {
+      font-size: 18px;
+    }
   }
 }
