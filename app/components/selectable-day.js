@@ -1,7 +1,7 @@
 import Ember from 'ember';
+import CalendaryDayComponent from './calendar-day';
 
-export default Ember.Component.extend({
-  classNames: ['month-calendar__day'],
+export default CalendaryDayComponent.extend({
   classNameBindings: ['selectable', 'selected:month-calendar__day--selected'],
 
   click() {
@@ -9,10 +9,6 @@ export default Ember.Component.extend({
       this.sendAction('clickedDate', this.get('date'));
     }
   },
-
-  isDateType: Ember.computed('date', function() {
-    return Ember.typeOf(this.get('date')) === 'date';
-  }),
 
   selectable: Ember.computed('startDate,endDate', function() {
     if (!this.get('isDateType')) {
@@ -25,11 +21,5 @@ export default Ember.Component.extend({
 
   selected: Ember.computed('selectedDates.[],date', function() {
     return this.get('selectedDates').contains(this.get('date'));
-  }),
-
-  displayDate: Ember.computed('date,isDateType', function() {
-    if (this.get('isDateType')) {
-      return this.get('date').getDate();
-    }
   })
 });

@@ -1,7 +1,7 @@
 import Ember from 'ember';
+import CalendarDayComponent from './calendar-day';
 
-export default Ember.Component.extend({
-  classNames: ['month-calendar__day'],
+export default CalendarDayComponent.extend({
   classNameBindings: ['frequency', 'isDateType::month-calendar__day--non'],
 
   percentageOfMaxFrequency: Ember.computed('dateFrequency,date', function() {
@@ -9,10 +9,6 @@ export default Ember.Component.extend({
     let max = dateFrequency['max'];
     let frequencyOfDate = dateFrequency[this.get('date')];
     return frequencyOfDate / max;
-  }),
-
-  isDateType: Ember.computed('date', function() {
-    return Ember.typeOf(this.get('date')) === 'date';
   }),
 
   frequency: Ember.computed('percentageOfMaxFrequency', function() {
@@ -23,12 +19,6 @@ export default Ember.Component.extend({
       return "month-calendar__day--more";
     } else if (percent > 0) {
       return "month-calendar__day--few";
-    }
-  }),
-
-  displayDate: Ember.computed('date,isDateType', function() {
-    if (this.get('isDateType')) {
-      return this.get('date').getDate();
     }
   })
 });
