@@ -29,8 +29,9 @@ export default Ember.Component.extend({
   }),
 
   // because we should reward people for filling in everything ;)
-  allInputsFilled: Ember.computed('name,location,details,secret,hasDates', function() {
-    return Ember.isPresent(this.get('name')) &&
+  allInputsFilled: Ember.computed('name,location,details,secret,hasDates,error', function() {
+    return !this.get('error') &&
+            Ember.isPresent(this.get('name')) &&
             Ember.isPresent(this.get('location')) &&
             Ember.isPresent(this.get('details')) &&
             Ember.isPresent(this.get('secret')) &&
