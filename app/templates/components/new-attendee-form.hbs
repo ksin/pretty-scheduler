@@ -13,24 +13,24 @@
 </section>
 
 <section class="new-attendee__form">
-  <div class="form-column form-inputs">
-    <div class="form-inputs__row form-row">
-      <label class="form-row__label">My name is</label>
-      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=220 placeholder="name . . ."}}
-    </div>
-
-    <div class="form-inputs__row form-row">
-      {{#if event.secret}}
-        <label class="form-row__label">and the super secret password is</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 placeholder="secret . . ." indicateNoValue=true}} .
-      {{/if}}
-    </div>
-    <div class="form-inputs__row form-row">
-      <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
-    </div>
+  <div class="form-column form-column--right-align">
+    {{form-message helloText=helloText isVisible=statusMessenger.hasMessage}}
   </div>
 
-  <div class="form-column">
-    {{form-message helloText=helloText isVisible=statusMessenger.hasMessage}}
+  <div class="form-column form-column--left-align">
+    <div class="form-row">
+      <label class="form-row__label">My name is</label>
+      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=250 placeholder="name . . ."}}{{#unless event.secret}}.{{/unless}}
+    </div>
+
+    <div class="form-row">
+      {{#if event.secret}}
+        <label class="form-row__label">and the super secret password is</label>
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 placeholder="secret . . ." indicateNoValue=true}}.
+      {{/if}}
+    </div>
+    <div class="form-row">
+      <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
+    </div>
   </div>
 </section>

@@ -23,9 +23,19 @@
   width: 540px;
   display: inline-block;
   height: 270px;
+
+  &--right-align {
+    text-align: right;
+  }
+
+  &--left-align {
+    text-align: left;
+  }
 }
 
 .form-row {
+  margin: 20px 0;
+
   &__label {
     font-size: 18px;
     margin-right: 10px;
@@ -41,22 +51,13 @@
 
   &__button {
     margin-top: 15px;
-  }
-}
-
-.form-inputs {
-  text-align: right;
-
-  &__row {
-    margin: 20px 0;
+    margin-left: 120px;
   }
 }
 
 .form-message {
-  text-align: left;
-  display: block;
+  display: inline-block;
   margin: 15px 0;
-  border: 1px solid lighten(black, 80%);
   overflow: hidden;
   width: 238px;
   border-radius: 4px;
@@ -72,7 +73,6 @@
     padding: 8px;
     font-size: 18px;
     text-align: center;
-    border-bottom: 1px solid lighten(black, 80%);
   }
 }
 
