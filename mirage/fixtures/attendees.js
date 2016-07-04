@@ -1,13 +1,34 @@
-import Attendees from './default-attendees';
+import defaultAttendees from './default-attendees';
 
+let Attendees = defaultAttendees;
+
+import attendeesGenerator from './attendees-generator';
 /**
-  Use the attendeesGenerator below and comment out the Attendees import above
-  to test generating large numbers of attendees.
+  Use the attendeesGenerator to test generating large numbers of attendees.
+
+  To override the default, add a hash at the end of the url in the
+  format of "#profile-attendees:NUMBER_OF_ATTENDEES",
+  where NUMBER_OF_ATTENDEES is the amount of attendees you want to generate.
 
   Computations on availableDates will be the number of attendees
   raised by a factor of 10, since each attendee has 10 availableDates.
+*/
 
-  *** Tests done in Google Chrome on a 2012 MacBook Air ***
+(function() {
+  let locationHash = window.location.hash;
+  let r = /profile-attendees:(\d+)/;
+  let match;
+
+  if (match = locationHash.match(r)) {
+    let numberOfAttendees = parseInt(match[1]);
+    Attendees = attendeesGenerator(numberOfAttendees);
+  }
+})()
+
+export default Attendees;
+
+/**
+  *** Tests done in Google Chrome in development environment ***
 
                                                     (Chrome Ember inspector)      (Chrome Ember inspector)
     Number of         |   Time spent calculating  |   View rendering time       |   View rendering time   |   Feels
@@ -24,9 +45,7 @@ import Attendees from './default-attendees';
   - 1000 attendees    |   132ms                    |  436.58ms                  |   342.36ms              |   tiny delay
   - 10000 attendees   |   1256ms                   |  1356.02ms                 |   1516.29ms             |   very noticeable delay
   - 50000 attendees   |   6160ms                   |  5308.38ms                 |   7253.05ms             |   very slow, but no crash yet
-  - 100000 attendees  |     -                      |     -                      |   browser crashes
+  - 100000 attendees  |     -                      |     -                      |       -                 |   browser crashes
 */
-// import attendeesGenerator from './attendees-generator';
-// let Attendees = attendeesGenerator(100);
 
-export default Attendees;
+
