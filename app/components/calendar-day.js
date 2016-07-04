@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   layoutName: "components/calendar-day",
+  tagName: "td",
 
   classNames: ['month-calendar__day'],
 

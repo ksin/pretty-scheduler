@@ -1,4 +1,4 @@
-<p class="month-calendar__heading month-calendar__heading--aggregate">
+<p class="month-calendar__heading month-calendar__heading--attendee">
   {{monthName}} <sub class="month-calendar__year">{{year}}</sub>
 </p>
 
@@ -16,9 +16,9 @@
     {{#each daysInMonth as |week|}}
       <tr>
       {{#each week as |date|}}
-        {{aggregate-day
+        {{attendee-day
             date=date
-            dateFrequency=dateFrequency}}
+            availableTimes=availableTimes}}
       {{/each}}
       </tr>
     {{/each}}
