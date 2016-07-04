@@ -11,4 +11,5 @@ export default function(server) {
 
   server.loadFixtures('attendees');
   server.loadFixtures('events');
+
 }
