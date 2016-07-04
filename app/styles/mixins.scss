@@ -4,3 +4,12 @@
   -o-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
 }
+
+@mixin line-input {
+  font-family: 'Dosis', sans-serif;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid black;
+  padding: 2px;
+  font-size: 18px;
+}

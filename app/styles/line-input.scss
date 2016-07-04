@@ -1,11 +1,6 @@
 .line-input {
   &__input {
-    font-family: 'Dosis', sans-serif;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid black;
-    padding: 2px;
-    min-width: 150px;
-    font-size: 18px;
+    @include line-input;
+    min-width: 100px;
   }
 }

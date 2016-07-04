@@ -15,14 +15,14 @@
 <section class="new-attendee__form">
   <div class="form-column form-inputs">
     <div class="form-inputs__row form-row">
-      <label class="form-row__label">Name:</label>
-      {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input" autoresize=true max-width=220 inputClass="line-input--bordered"}}
+      <label class="form-row__label">My name is</label>
+      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=220 placeholder="name . . ."}}
     </div>
 
     <div class="form-inputs__row form-row">
       {{#if event.secret}}
-        <label class="form-row__label">Do you know the super secret password?</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 inputClass="line-input--bordered"}}
+        <label class="form-row__label">and the super secret password is</label>
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 placeholder="secret . . ." indicateNoValue=true}} .
       {{/if}}
     </div>
     <div class="form-inputs__row form-row">

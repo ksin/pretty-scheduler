@@ -22,7 +22,7 @@
   margin: 0 30px;
   width: 540px;
   display: inline-block;
-  height: 300px;
+  height: 270px;
 }
 
 .form-row {
@@ -33,6 +33,10 @@
 
   &__input {
     display: inline-block;
+  }
+
+  &__input-name {
+    margin-right: 6px;
   }
 
   &__button {

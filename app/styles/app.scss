@@ -7,7 +7,6 @@
 @import 'home';
 @import 'event';
 @import 'new-attendee';
-@import 'new-event';
 @import 'not-found';
 @import 'month-calendar';
 @import 'button';
@@ -16,6 +15,7 @@
 @import 'line-input';
 @import 'attendees-availabilities';
 @import 'about';
+@import 'new-event';
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

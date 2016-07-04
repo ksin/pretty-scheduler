@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   }),
 
   isValidAttendee: Ember.computed('name,secret,isValidSecret', function() {
-    if (!Ember.isPresent(this.get('name'))) {
+    if (Ember.isBlank(this.get('name'))) {
       this.set('statusMessenger.status', 'new-attendee:no-name');
       return false;
     } else if (!this.get('isValidSecret')) {

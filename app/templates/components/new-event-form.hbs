@@ -1,27 +1,13 @@
-<ul>
-  <li>
-    <label>Name</label>
-    {{line-input value=(mut (get this 'name')) class="new-event__name"}}
-  </li>
-  <li>
-    <label>Details</label>
-    {{line-input value=(mut (get this 'details')) class="new-event__details"}}
-  </li>
-  <li>
-    <label>Location (optional)</label>
-    {{line-input value=(mut (get this 'location')) class="new-event__location"}}
-  </li>
-  <li>
-    <label>Secret (optional)</label>
-    {{line-input value=(mut (get this 'secret')) class="new-event__secret"}}
-  </li>
-  <li>
-    <label>Start Date</label>
-    {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate') class="new-event__start-date"}}
+<div class="new-event__inputs">
+  <p class="new-event__line">The event I want to plan is called {{line-input value=(mut (get this 'name')) class="new-event__input new-event__name" placeholder="event name . . ." autoresize=true max-width=400 indicateNoValue=true}}.</p>
 
-    <label>End Date</label>
-    {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate') class="new-event__end-date"}}
-  </li>
-</ul>
+  <p class="new-event__line">It will take place at {{line-input value=(mut (get this 'location')) class="new-event__input new-event__location" placeholder="location  (optional)" autoresize=true max-width=400}}.</p>
 
-<button {{action "createEvent"}} class="new-event__create">Create Event</button>
+  <p class="new-event__line">All you need to know about it is {{line-input value=(mut (get this 'details')) class="new-event__input new-event__details" placeholder="details  (optional)" autoresize=true max-width=400}}.</p>
+
+  <p class="new-event__line">Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret" type="password" placeholder="secret  (optional)" autoresize=true max-width=400}}.</p>
+
+  <p class="new-event__line">The days that attendees can let me know their availabilities are from {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate') class="new-event__start-date new-event__date" placeholder="start date"}} to {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate') class="new-event__end-date new-event__date" placeholder="end date"}} .</p>
+</div>
+
+<button {{action "createEvent"}} class="button button--large new-event__create">Create Event</button>
