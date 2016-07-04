@@ -1,4 +1,4 @@
 import Ember from 'ember';
-import MonthCalendarComponentMixin from '../mixins/month-calendar-component';
+import MonthCalendarComponent from './month-calendar';
 
-export default Ember.Component.extend(MonthCalendarComponentMixin);
+export default MonthCalendarComponent.extend();
