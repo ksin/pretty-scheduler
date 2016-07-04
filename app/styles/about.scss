@@ -2,7 +2,7 @@
 
   &__icon {
     display: block;
-    border: 2px solid lighten(black, 85%);
+    border: 1px solid lighten(black, 85%);
     color: lighten(black, 85%);
     width: 35px;
     height: 35px;
@@ -11,7 +11,6 @@
     bottom: 10px;
     border-radius: 6px;
     text-align: center;
-    font-weight: bold;
     cursor: pointer;
 
     &:hover {
@@ -32,7 +31,6 @@
 
     &--close {
       font-size: 28px;
-      font-weight: normal;
     }
   }
 
@@ -52,7 +50,7 @@
     right: 60px;
     width: 500px;
     border-radius: 6px;
-    border: 2px solid lighten(black, 85%);
+    border: 1px solid lighten(black, 85%);
     background-color: white;
   }
 }

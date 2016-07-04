@@ -21,10 +21,22 @@
   }
 
   &--inverse {
-    border: 1px solid lighten(black, 40%);
+    border: 1px solid lighten(black, 50%);
     background-color: transparent;
-    color: lighten(black, 40%);
+    color: lighten(black, 50%);
     font-weight: normal;
+
+    &:hover {
+      border: 1px solid lighten(black, 30%);
+      background-color: transparent;
+      color: lighten(black, 30%);
+    }
+
+    &:active {
+      border: 1px solid lighten(black, 10%);
+      background-color: transparent;
+      color: lighten(black, 10%);
+    }
   }
 
   &--large {

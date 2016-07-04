@@ -1,4 +1,4 @@
-<div class="new-event__inputs">
+<section class="new-event__inputs">
   <p class="new-event__line">The event I want to plan is called {{line-input value=(mut (get this 'name')) class="new-event__input new-event__name" placeholder="event name . . ." autoresize=true max-width=400 indicateNoValue=true}}.</p>
 
   <p class="new-event__line">It will take place at {{line-input value=(mut (get this 'location')) class="new-event__input new-event__location" placeholder="location  (optional)" autoresize=true max-width=400}}.</p>
@@ -8,6 +8,16 @@
   <p class="new-event__line">Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret" type="password" placeholder="secret  (optional)" autoresize=true max-width=400}}.</p>
 
   <p class="new-event__line">The days that attendees can let me know their availabilities are from {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate') class="new-event__start-date new-event__date" placeholder="start date"}} to {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate') class="new-event__end-date new-event__date" placeholder="end date"}} .</p>
-</div>
+</section>
 
-<button {{action "createEvent"}} class="button button--large new-event__create">Create Event</button>
+<section>
+  <div class="new-event__submit">
+    {{#if error}}
+      <div class="new-event__errors">
+        {{error}}
+      </div>
+    {{/if}}
+
+    <button {{action "createEvent"}} class="button button--large new-event__create">Create Event</button>
+  </div>
+</section>

@@ -1,9 +1,11 @@
 .new-event {
 
   &__header {
-    text-align: center;
+    text-align: left;
+    margin: 0 auto;
     margin-top: 200px;
     font-size: 40px;
+    width: 800px;
   }
 
   &__form {
@@ -16,7 +18,9 @@
 
   &__line {
     font-size: 20px;
-    margin: 30px 0;
+    width: 800px;
+    margin: 30px auto;
+    text-align: left;
   }
 
   &__input {
@@ -31,5 +35,20 @@
 
   &__create {
     margin-top: 25px;
+    margin-right: 50px;
+    display: inline-block;
+  }
+
+  &__errors {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+
+  &__submit {
+    text-align: right;
+    width: 800px;
+    margin: 30px auto;
   }
 }
