@@ -1,31 +1,32 @@
 <section>
   <h2 class="attendees-availabilities__header">Check out the dates that attendees are available yo!</h2>
 
-  {{#each event.months as |month|}}
-    {{#if isCheckingAll}}
+  {{#liquid-if isCheckingAll use="fade"}}
+    {{#each event.months as |month|}}
       {{aggregate-month
           month=month
           dateFrequency=event.dateFrequency
           startDate=event.startDate
           endDate=event.endDate}}
-    {{/if}}
-    {{#if isCheckingAttendee}}
-      {{attendee-month
-          month=month
-          availableDates=checking.availableDates
-          startDate=event.startDate
-          endDate=event.endDate}}
-    {{/if}}
-  {{/each}}
-
-  {{#if isCheckingAll}}
+    {{/each}}
     <div class="attendees-availabilities__legend">
       <p class="legend"><span class="legend__icon legend__icon--few"></span>few</p>
       <p class="legend"><span class="legend__icon legend__icon--more"></span>more</p>
       <p class="legend"><span class="legend__icon legend__icon--everyone"></span>everyone</p>
     </div>
-  {{/if}}
-
+  {{else}}
+    {{#if isCheckingAttendee}}
+      {{#liquid-bind checking use="crossFade" as |checking|}}
+        {{#each event.months as |month|}}
+          {{attendee-month
+              month=month
+              availableDates=checking.availableDates
+              startDate=event.startDate
+              endDate=event.endDate}}
+        {{/each}}
+      {{/liquid-bind}}
+    {{/if}}
+  {{/liquid-if}}
 
   <div class="attendees-availabilities__check">
     <div class="check-availabilities__all">
