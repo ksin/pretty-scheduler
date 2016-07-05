@@ -5,7 +5,7 @@ export default CalendaryDayComponent.extend({
   classNameBindings: ['selectable', 'selected:month-calendar__day--selected'],
 
   click() {
-    if (this.get('selectable')) {
+    if (this.get('selectable') !== 'month-calendar__day--unselectable') {
       this.sendAction('clickedDate', this.get('date'));
     }
   },

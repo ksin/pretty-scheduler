@@ -1,4 +1,4 @@
-{{#if isShowingNewAttendeeCalendar}}
+{{#liquid-if isShowingNewAttendeeCalendar class="event-calendars"}}
   {{new-attendee-form event=event createAttendee="createAttendee" class="new-attendee"}}
   <span class="divider"></span>
   {{#if hasAttendees}}
@@ -8,4 +8,4 @@
   {{attendees-availabilities event=event class="attendees-availabilities"}}
   <span class="divider"></span>
   <button {{action "toggleCalendars"}} class="button button--inverse event-calendars__toggle">HEY share the dates that you're available OK?</button>
-{{/if}}
+{{/liquid-if}}

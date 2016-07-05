@@ -1,8 +1,7 @@
 export default function(){
   this.transition(
     this.hasClass('form-message'),
-    this.use('toUp'),
-    this.reverse('toDown')
+    this.use('fade', {duration: 1000})
   );
   this.transition(
     this.hasClass('hello'),
@@ -18,6 +17,10 @@ export default function(){
   );
   this.transition(
     this.hasClass('success'),
+    this.use('fade', {duration: 1000})
+  );
+  this.transition(
+    this.hasClass('event-calendars'),
     this.use('fade', {duration: 1000})
   );
 }
