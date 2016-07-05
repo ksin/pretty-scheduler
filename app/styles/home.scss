@@ -1,9 +1,10 @@
 .home {
   &__heading {
-    font-size: 100px;
-    font-weight: bold;
+    font-size: 150px;
+    font-family: 'Moon Flower', sans-serif;
     text-align: center;
-    margin-top: 250px;
+    margin-top: 270px;
+    color: lighten(black, 30%);
   }
 
   &__image {
@@ -13,6 +14,6 @@
 
   &__new-event {
     text-align: center;
-    margin: 80px;
+    margin: 40px;
   }
 }

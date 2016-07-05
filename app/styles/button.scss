@@ -20,28 +20,54 @@
     background-color: lighten(black, 20%);
   }
 
-  &--inverse {
-    border: 1px solid lighten(black, 50%);
-    background-color: transparent;
-    color: lighten(black, 50%);
-    font-weight: normal;
+  &--med {
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &--large {
+    padding: 18px 26px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
+  &--green {
+    @include button-color(lighten($green-primary, 5%));
     &:hover {
-      border: 1px solid lighten(black, 30%);
-      background-color: transparent;
-      color: lighten(black, 30%);
+      @include button-color($green-primary);
     }
-
     &:active {
-      border: 1px solid lighten(black, 10%);
-      background-color: transparent;
-      color: lighten(black, 10%);
+      @include button-color(darken($green-primary, 10%));
     }
   }
 
-  &--large {
-    padding: 20px 24px;
-    font-size: 18px;
-    font-weight: bold;
+  &--inverse {
+    @include inverse-button(lighten(black, 30%));
+    &:hover {
+      @include inverse-button(lighten(black, 20%));
+    }
+    &:active {
+      @include inverse-button(lighten(black, 10%));
+    }
+
+    &-thick {
+      border-width: 2px;
+      &:hover {
+        border-width: 2px;
+      }
+      &:active {
+        border-width: 2px;
+      }
+    }
+
+    &-blue {
+      @include inverse-button(lighten($tokiwa-blue, 15%));
+      &:hover {
+        @include inverse-button(lighten($tokiwa-blue, 5%));
+      }
+      &:active {
+        @include inverse-button($tokiwa-blue);
+      }
+    }
   }
 }

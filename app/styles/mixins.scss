@@ -13,3 +13,15 @@
   padding: 2px;
   font-size: 18px;
 }
+
+@mixin inverse-button($color) {
+  border-style: solid;
+  border-color: $color;
+  color: $color;
+  background-color: transparent;
+}
+
+@mixin button-color($color) {
+  background-color: $color;
+  border: $color;
+}

@@ -1,6 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Dosis:400,600);
-
 @import 'reset';
+@import 'fonts';
 @import 'colors';
 
 @import 'mixins';
@@ -27,4 +26,19 @@
 body {
   font-family: 'Dosis', sans-serif;
   background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: lighten(black, 25%);
+
+  &.event {
+
+  }
+
+  &.index {
+    background-image: url('/assets/images/home.jpg');
+  }
+
+  &.events-new {
+
+  }
 }
