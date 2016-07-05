@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  statusMessenger: Ember.inject.service(),
-
+  formMessage: null,
   helloText: null,
+  hasMessage: Ember.computed.bool('formMessage'),
 
   // temporary | should validate on server, obviously.
   isValidSecret: Ember.computed('secret,event.secret', function() {
@@ -12,10 +12,10 @@ export default Ember.Component.extend({
 
   isValidAttendee: Ember.computed('name,secret,isValidSecret', function() {
     if (Ember.isBlank(this.get('name'))) {
-      this.set('statusMessenger.status', 'new-attendee:no-name');
+      this.set('formMessage', 'new-attendee:no-name');
       return false;
     } else if (!this.get('isValidSecret')) {
-      this.set('statusMessenger.status', 'new-attendee:wrong-secret');
+      this.set('formMessage', 'new-attendee:wrong-secret');
       return false;
     }
     return true;
@@ -29,13 +29,17 @@ export default Ember.Component.extend({
     };
   }),
 
-  submitIsSuccessful: Ember.computed.equal('statusMessenger.status','new-attendee:success'),
+  submitIsSuccessful: Ember.computed.equal('formMessage','new-attendee:success'),
+  shouldShowSubmit: Ember.computed.not('submitIsSuccessful'),
 
   actions: {
     createAttendee() {
       this.set('message', null);
       if (this.get('isValidAttendee')) {
-        this.sendAction('createAttendee', this.get('attendeeObject'));
+        let result = this.get('createAttendee')(this.get('attendeeObject'));
+        result.then(() => {
+          this.set('formMessage', 'new-attendee:success');
+        });
       }
     },
 
@@ -47,10 +51,10 @@ export default Ember.Component.extend({
     */
     focusOutNameInput(name) {
       if (Ember.isPresent(name)) {
-        this.set('statusMessenger.status', 'new-attendee:hello');
-        this.set('helloText', `Hi there, ${name}!`);
+        this.set('formMessage', 'new-attendee:hello');
+        this.set('helloText', name);
       } else {
-        this.get('statusMessenger').clearStatus();
+        this.set('statusMessenger', null);
         this.set('helloText', null);
       }
       this.set('name', name);

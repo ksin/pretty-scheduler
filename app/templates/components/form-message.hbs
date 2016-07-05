@@ -1,19 +1,6 @@
-{{#liquid-if hello class="hello"}}
-  <p class="form-message__text form-message__text--hello">{{helloText}}</p>
-  <img src="/assets/images/hello.gif" class="form-message__img">
-{{/liquid-if}}
-
-{{#liquid-if noName class="no-name"}}
-  <p class="form-message__text form-message__text--no-name">What's your name tho?</p>
-  <img src="/assets/images/no-name.gif" class="form-message__img">
-{{/liquid-if}}
-
-{{#liquid-if wrongSecret class="wrong-secret"}}
-  <p class="form-message__text form-message__text--wrong-secret">You got the secret wrong!</p>
-  <img src="/assets/images/wrong-secret.gif" class="form-message__img">
-{{/liquid-if}}
-
-{{#liquid-if success class="success"}}
-  <p class="form-message__text form-message__text--success">BOO-YAH! Your dates are saved.</p>
-  <img src="/assets/images/success.gif" class="form-message__img">
-{{/liquid-if}}
+{{#liquid-bind displayText use="fade" as |text|}}
+  <p class="form-message__text">{{text}}</p>
+{{/liquid-bind}}
+{{#liquid-bind imgSrc use="fade" as |src|}}
+  <img src={{src}} class="form-message__img">
+{{/liquid-bind}}

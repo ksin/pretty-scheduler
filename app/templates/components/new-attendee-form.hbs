@@ -14,9 +14,7 @@
 
 <section class="new-attendee__form">
   <div class="form-column form-column--right-align">
-    {{#liquid-if statusMessenger.hasMessage class='form-message'}}
-      {{form-message helloText=helloText isVisible=statusMessenger.hasMessage}}
-    {{/liquid-if}}
+    {{form-message helloText=helloText message=formMessage}}
   </div>
 
   <div class="form-column form-column--left-align">
@@ -32,9 +30,9 @@
       {{/if}}
     </div>
     <div class="form-row">
-      {{#unless submitIsSuccessful}}
+      {{#if shouldShowSubmit}}
         <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
-      {{/unless}}
+      {{/if}}
     </div>
   </div>
 </section>
