@@ -2,11 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: "button",
-  classNameBindings: ["isBeingChecked:attendees-availabilities__check--checking"],
+  classNames: ['attendee-to-check'],
+  classNameBindings: ["isBeingChecked:attendee-to-check--checking"],
   displayName: Ember.computed('attendee', function() {
     let attendee = this.get('attendee');
     if (attendee === "all") {
-      return "All";
+      return "All Attendees";
     } else if (attendee.get('constructor.modelName') === "attendee") {
       return attendee.get('name');
     }

@@ -1,8 +1,7 @@
 import defaultAttendees from './default-attendees';
+import attendeesGenerator from './attendees-generator';
 
 let Attendees = defaultAttendees;
-
-import attendeesGenerator from './attendees-generator';
 /**
   Use the attendeesGenerator to test generating large numbers of attendees.
 
@@ -13,7 +12,6 @@ import attendeesGenerator from './attendees-generator';
   Computations on availableDates will be the number of attendees
   raised by a factor of 10, since each attendee has 10 availableDates.
 */
-
 (function() {
   let locationHash = window.location.hash;
   let r = /profile-attendees:(\d+)/;
@@ -23,12 +21,14 @@ import attendeesGenerator from './attendees-generator';
     let numberOfAttendees = parseInt(match[1]);
     Attendees = attendeesGenerator(numberOfAttendees);
   }
-})()
+})();
 
 export default Attendees;
 
 /**
-  *** Tests done in Google Chrome in development environment ***
+  NOTE: These tests are outdated and generally ineffective. Just keeping it here for posterity.
+
+  --- Tests done in Google Chrome in development environment ---
 
                                                     (Chrome Ember inspector)      (Chrome Ember inspector)
     Number of         |   Time spent calculating  |   View rendering time       |   View rendering time   |   Feels

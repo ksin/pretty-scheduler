@@ -26,14 +26,15 @@
     </div>
   {{/if}}
 
-  <h3>Select the attendee to check availability for:</h3>
 
   <div class="attendees-availabilities__check">
-    <span class="attendees-availabilities__all">
+    <div class="check-availabilities__all">
       {{attendee-to-check click=(action "checkAvailabilityFor" "all") checking=checking attendee="all"}}
-    </span>
-    {{#each event.attendees as |attendee|}}
-      {{attendee-to-check click=(action "checkAvailabilityFor" attendee) checking=checking attendee=attendee}}
-    {{/each}}
+    </div>
+    <div class="check-availabilities__attendees">
+      {{#each event.attendees as |attendee|}}
+        {{attendee-to-check click=(action "checkAvailabilityFor" attendee) checking=checking attendee=attendee}}
+      {{/each}}
+    </div>
   </div>
 </section>

@@ -63,5 +63,9 @@
     &--few {
       background-color: lighten(black, 70%);
     }
+
+    &--available {
+      background-color: lighten(black, 60%);
+    }
   }
 }
