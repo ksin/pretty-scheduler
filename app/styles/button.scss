@@ -43,6 +43,7 @@
 
   &--inverse {
     @include inverse-button(lighten(black, 30%));
+    font-weight: normal;
     &:hover {
       @include inverse-button(lighten(black, 20%));
     }

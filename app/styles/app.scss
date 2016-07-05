@@ -25,13 +25,17 @@
 
 body {
   font-family: 'Dosis', sans-serif;
+  color: lighten(black, 25%);
   background-color: white;
   background-repeat: no-repeat;
-  background-size: cover;
-  color: lighten(black, 25%);
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
 
   &.event {
-
   }
 
   &.index {
@@ -39,6 +43,5 @@ body {
   }
 
   &.events-new {
-
   }
 }
