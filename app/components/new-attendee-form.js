@@ -10,16 +10,20 @@ export default Ember.Component.extend({
     return Ember.isBlank(this.get('event.secret')) || (this.get('secret') === this.get('event.secret'));
   }),
 
-  isValidAttendee: Ember.computed('name,secret,isValidSecret', function() {
+  isValidAttendee: Ember.computed('name,isValidSecret', function() {
+    return Ember.isPresent(this.get('name')) &&
+            this.get('isValidSecret');
+  }),
+
+  setValidationErrors() {
     if (Ember.isBlank(this.get('name'))) {
       this.set('formMessage', 'new-attendee:no-name');
-      return false;
     } else if (!this.get('isValidSecret')) {
       this.set('formMessage', 'new-attendee:wrong-secret');
-      return false;
+    } else {
+      this.set('formMessage', null);
     }
-    return true;
-  }),
+  },
 
   attendeeObject: Ember.computed('name,availableDates.[]', function() {
     return {
@@ -34,12 +38,13 @@ export default Ember.Component.extend({
 
   actions: {
     createAttendee() {
-      this.set('message', null);
       if (this.get('isValidAttendee')) {
         let result = this.get('createAttendee')(this.get('attendeeObject'));
         result.then(() => {
           this.set('formMessage', 'new-attendee:success');
         });
+      } else {
+        this.setValidationErrors();
       }
     },
 

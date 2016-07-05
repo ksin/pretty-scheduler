@@ -12,15 +12,14 @@
 
 <section>
   <div class="new-event__submit">
-    {{#if error}}
-      <div class="new-event__message new-event__message--error">
+    <div class="new-event__message new-event__message--error">
+      {{#liquid-bind error use="toLeft" as |error|}}
         {{error}}
-      </div>
-    {{/if}}
+      {{/liquid-bind}}
+    </div>
     {{#if allInputsFilled}}
       <img class="new-event__message new-event__message--filled" src="/assets/images/wow.gif">
     {{/if}}
-
     <button {{action "createEvent"}} class="button button--large new-event__create">Create Event</button>
   </div>
 </section>

@@ -1,4 +1,4 @@
-{{#liquid-if isShowingNewAttendeeCalendar class="event-calendars"}}
+{{#liquid-if isShowingNewAttendeeCalendar use="fade"}}
   {{new-attendee-form event=event createAttendee=(route-action "createAttendee") class="new-attendee"}}
   <span class="divider"></span>
   {{#if hasAttendees}}

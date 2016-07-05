@@ -3,19 +3,25 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   error: null,
 
-  isValidEvent: Ember.computed('name,isValidDateRange', function() {
-    if (Ember.isBlank(this.get('name'))) {
-      this.set('error', "What's the event name tho?");
-      return false;
-    } else if (!this.get('isValidDateRange')) {
-      this.set('error', "That date range is invalid. (You can only create events with a 1-2 month range for now)");
-      return false;
-    }
-    return true;
+  isValidEvent: Ember.computed('name,hasDates,isValidDateRange', function() {
+    return Ember.isPresent(this.get('name')) &&
+            this.get('hasDates') &&
+            this.get('isValidDateRange');
   }),
 
-  isValidDateRange: Ember.computed('startDate,endDate,hasDates', function() {
-    if (!this.get('hasDates')) { return false; }
+  setValidationErrors() {
+    if (Ember.isBlank(this.get('name'))) {
+      this.set('error', "What's the event name tho?");
+    } else if (!this.get('hasDates')) {
+      this.set('error', "Please enter some dates. :)")
+    } else if (!this.get('isValidDateRange')) {
+      this.set('error', "That date range is invalid. (You can only create events with a 1-2 month range for now)");
+    } else {
+      this.set('error', null);
+    }
+  },
+
+  isValidDateRange: Ember.computed('startDate,endDate', function() {
     let startDate = this.get('startDate');
     let endDate = this.get('endDate');
     let maxDate = new Date(startDate.getFullYear(), startDate.getMonth() + 2, 0);
@@ -28,13 +34,12 @@ export default Ember.Component.extend({
   }),
 
   // because we should reward people for filling in everything ;)
-  allInputsFilled: Ember.computed('name,location,details,secret,hasDates,error', function() {
+  allInputsFilled: Ember.computed('isValidEvent,error,location,details,secret', function() {
     return !this.get('error') &&
-            Ember.isPresent(this.get('name')) &&
+            this.get('isValidEvent') &&
             Ember.isPresent(this.get('location')) &&
             Ember.isPresent(this.get('details')) &&
-            Ember.isPresent(this.get('secret')) &&
-            this.get('hasDates');
+            Ember.isPresent(this.get('secret'));
   }),
 
   eventObject: Ember.computed('name,location,details,secret,startDate,endDate', function() {
@@ -57,9 +62,10 @@ export default Ember.Component.extend({
     },
 
     createEvent() {
-      this.set('error', null);
       if (this.get('isValidEvent')) {
         this.sendAction('createEvent', this.get('eventObject'));
+      } else {
+        this.setValidationErrors();
       }
     }
   }
