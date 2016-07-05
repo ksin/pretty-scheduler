@@ -50,7 +50,7 @@
     right: 60px;
     width: 500px;
     border-radius: 6px;
-    border: 1px solid $pastel-blue;
+    border: 1px solid darken($pastel-blue, 30%);
     background-color: white;
   }
 }
