@@ -29,6 +29,8 @@ export default Ember.Component.extend({
     };
   }),
 
+  submitIsSuccessful: Ember.computed.equal('statusMessenger.status','new-attendee:success'),
+
   actions: {
     createAttendee() {
       this.set('message', null);

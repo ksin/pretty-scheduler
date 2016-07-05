@@ -30,7 +30,9 @@
       {{/if}}
     </div>
     <div class="form-row">
-      <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
+      {{#unless submitIsSuccessful}}
+        <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
+      {{/unless}}
     </div>
   </div>
 </section>
