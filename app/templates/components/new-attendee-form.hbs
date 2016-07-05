@@ -14,7 +14,9 @@
 
 <section class="new-attendee__form">
   <div class="form-column form-column--right-align">
-    {{form-message helloText=helloText isVisible=statusMessenger.hasMessage}}
+    {{#liquid-if statusMessenger.hasMessage class='form-message'}}
+      {{form-message helloText=helloText}}
+    {{/liquid-if}}
   </div>
 
   <div class="form-column form-column--left-align">

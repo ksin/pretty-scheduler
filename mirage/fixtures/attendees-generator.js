@@ -29,4 +29,4 @@ export default function(numberOfAttendees) {
   }
 
   return attendees;
-};
+}
