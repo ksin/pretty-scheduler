@@ -39,7 +39,13 @@ body {
   }
 
   &.index {
-    background-image: url('/assets/images/home.jpg');
+    background-image: url('/assets/images/home-1440.jpg');
+    @media screen and (max-width: 1080) {
+      background-image: url('/assets/images/home-1080.jpg');
+    }
+    @media screen and (max-width: 600) {
+      background-image: url('/assets/images/home-600.jpg');
+    }
   }
 
   &.events-new {
