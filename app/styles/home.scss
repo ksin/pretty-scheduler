@@ -1,10 +1,10 @@
 .home {
   &__heading {
-    font-size: 150px;
-    font-family: 'Moon Flower', sans-serif;
+    font-size: 120px;
+    font-family: 'lemon yellow sun', sans-serif;
     text-align: center;
     margin-top: 270px;
-    color: lighten(black, 30%);
+    color: lighten(black, 35%);
 
     @media screen and (max-width: 610px) {
       font-size: 100px;
@@ -13,7 +13,7 @@
       font-size: 100px;
     }
     @media screen and (max-height: 600px) {
-      margin-top: 100px;
+      margin-top: 80px;
     }
     @media screen and (min-height: 1024px) {
       margin-top: 360px;
@@ -27,6 +27,6 @@
 
   &__new-event {
     text-align: center;
-    margin: 40px;
+    margin: 50px;
   }
 }

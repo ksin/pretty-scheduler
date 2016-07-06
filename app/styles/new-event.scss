@@ -1,10 +1,21 @@
 .new-event {
+  width: 800px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 860px) {
+    width: 80%;
+    line-height: 40px;
+  }
+
   &__header {
     text-align: left;
     margin: 0 auto;
     margin-top: 200px;
     font-size: 40px;
-    width: 800px;
+
+    @media screen and (max-height: 680px) {
+      margin-top: 100px;
+    }
   }
 
   &__form {
@@ -16,10 +27,13 @@
   }
 
   &__line {
-    font-size: 20px;
-    width: 800px;
     margin: 30px auto;
+    font-size: 20px;
     text-align: left;
+
+    @media screen and (max-width: 860px) {
+      margin: 20px auto;
+    }
   }
 
   &__input {
@@ -35,14 +49,21 @@
 
   &__submit {
     text-align: right;
-    width: 800px;
     margin: 30px auto;
+
+    @media screen and (max-width: 500px) {
+      text-align: center;
+    }
   }
 
   &__create {
     margin-top: 25px;
     margin-right: 52px;
     display: inline-block;
+
+    @media screen and (max-width: 860px) {
+      margin-right: 15px;
+    }
   }
 
   &__message {
@@ -58,6 +79,11 @@
       position: absolute;
       right: 30px;
       bottom: 0;
+
+      @media screen and (max-width: 1200px) {
+        top: 0;
+        right: 0;
+      }
     }
   }
 }
