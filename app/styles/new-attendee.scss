@@ -1,5 +1,6 @@
 .new-attendee {
   margin: 20px auto;
+  margin-bottom: 30px;
 
   &__header {
     text-align: center;
@@ -14,6 +15,10 @@
   &__form {
     margin: 20px auto;
     text-align: center;
+
+    @media screen and (max-width: 1250px) {
+      margin: 0;
+    }
   }
 }
 
@@ -22,18 +27,31 @@
   margin: 0 30px;
   width: 540px;
   display: inline-block;
+  margin-top: 10px;
 
-  &--right-align {
-    text-align: right;
+  @media screen and (max-width: 1250px) {
+    margin: 0;
   }
 
-  &--left-align {
+  &--messages {
+    text-align: right;
+
+    @media screen and (max-width: 1250px) {
+      text-align: center;
+    }
+  }
+
+  &--inputs {
     text-align: left;
   }
 }
 
 .form-row {
   margin: 20px 0;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
 
   &__label {
     font-size: 18px;
@@ -56,14 +74,17 @@
 
 .form-message {
   display: inline-block;
-  margin: 20px 0;
   overflow: hidden;
   width: 238px;
   border-radius: 4px;
 
+  @media screen and (max-width: 1250px) {
+    margin: 0;
+    width: auto;
+  }
+
   &__img {
     display: block;
-    height: 200px;
     width: auto;
   }
 

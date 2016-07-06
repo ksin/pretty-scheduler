@@ -59,7 +59,7 @@ export default Ember.Component.extend({
         this.set('formMessage', 'new-attendee:hello');
         this.set('helloText', name);
       } else {
-        this.set('statusMessenger', null);
+        this.set('formMessage', null);
         this.set('helloText', null);
       }
       this.set('name', name);

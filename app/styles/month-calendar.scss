@@ -5,6 +5,13 @@
   border-radius: 4px;
   text-align: center;
 
+  @media screen and (max-width: 1250px) {
+    display: block;
+    width: 562px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
   &__heading {
     font-size: 20px;
     padding: 20px;
