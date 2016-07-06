@@ -26,7 +26,7 @@
     <div class="form-row">
       {{#if event.secret}}
         <label class="form-row__label">and the super secret password is</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=220 placeholder="secret . . ." indicateNoValue=true}}.
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=200 placeholder="secret . . ." indicateNoValue=true}}.
       {{/if}}
     </div>
     <div class="form-row">

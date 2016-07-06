@@ -16,7 +16,7 @@
     margin: 20px auto;
     text-align: center;
 
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1020px) {
       margin: 0;
     }
   }
@@ -29,20 +29,28 @@
   display: inline-block;
   margin-top: 10px;
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1205px) {
+    width: 440px;
+  }
+  @media screen and (max-width: 1020px) {
+    width: 540px;
     margin: 0;
   }
 
   &--messages {
     text-align: right;
 
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1020px) {
       text-align: center;
     }
   }
 
   &--inputs {
     text-align: left;
+
+    @media screen and (max-width: 1020px) {
+      text-align: center;
+    }
   }
 }
 
@@ -78,7 +86,7 @@
   width: 238px;
   border-radius: 4px;
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1020px) {
     margin: 0;
     width: auto;
   }
