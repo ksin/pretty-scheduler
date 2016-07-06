@@ -36,6 +36,9 @@
     width: 540px;
     margin: 0;
   }
+  @media screen and (max-width: 455px) {
+    width: auto;
+  }
 
   &--messages {
     text-align: right;

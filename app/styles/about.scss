@@ -13,6 +13,11 @@
     text-align: center;
     cursor: pointer;
 
+    @media screen and (max-width: 600px) {
+      right: 5px;
+      bottom: 5px;
+    }
+
     &:hover {
       @include transition-all;
       border-color: darken($pastel-blue, 20%);

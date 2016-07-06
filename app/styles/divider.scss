@@ -3,4 +3,8 @@
   display: block;
   border-bottom: 1px solid lighten(black, 80%);
   width: 550px;
+
+  @media screen and (max-width: 550px) {
+    width: auto;
+  }
 }
