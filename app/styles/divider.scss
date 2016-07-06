@@ -7,4 +7,14 @@
   @media screen and (max-width: 550px) {
     width: auto;
   }
+
+  &--pink {
+    border-color: $pink-secondary;
+  }
+  &--green {
+    border-color: lighten($pastel-green, 35%);
+  }
+  &--purple {
+    border-color: lighten($purple-primary, 20%);
+  }
 }

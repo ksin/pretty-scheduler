@@ -5,6 +5,7 @@
     text-align: center;
     margin-top: 270px;
     color: lighten(black, 35%);
+    cursor: default;
 
     @media screen and (max-width: 610px) {
       font-size: 100px;
@@ -28,5 +29,14 @@
   &__new-event {
     text-align: center;
     margin: 50px;
+  }
+
+  &--pretty {
+    &-pink {
+      @include hover-color($pink-primary);
+    }
+    &-sasuke {
+      @include hover-color($sasuke-blue);
+    }
   }
 }

@@ -1,5 +1,5 @@
 .button {
-  padding: 8px 16px;
+  padding: 12px 20px;
   border: 1px solid lighten(black, 50%);
   background-color: lighten(black, 50%);
   color: white;
@@ -31,13 +31,13 @@
     font-weight: bold;
   }
 
-  &--green {
-    @include button-color(lighten($green-primary, 5%));
+  &--blue {
+    @include button-color(lighten($sasuke-blue, 5%));
     &:hover {
-      @include button-color($green-primary);
+      @include button-color($sasuke-blue);
     }
     &:active {
-      @include button-color(darken($green-primary, 10%));
+      @include button-color(darken($sasuke-blue, 5%));
     }
   }
 
@@ -61,13 +61,22 @@
       }
     }
 
-    &-blue {
+    &-tokiwa-blue {
       @include inverse-button(lighten($tokiwa-blue, 15%));
       &:hover {
         @include inverse-button(lighten($tokiwa-blue, 5%));
       }
       &:active {
         @include inverse-button($tokiwa-blue);
+      }
+    }
+    &-purple {
+      @include inverse-button($purple-primary);
+      &:hover {
+        @include inverse-button(darken($purple-primary, 5%));
+      }
+      &:active {
+        @include inverse-button(darken($purple-primary, 10%));
       }
     }
   }

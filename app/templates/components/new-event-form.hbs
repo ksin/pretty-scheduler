@@ -1,13 +1,23 @@
 <section class="new-event__inputs">
-  <p class="new-event__line">The event I want to plan is called <span class="line-input-with-period">{{line-input value=(mut (get this 'name')) class="new-event__input new-event__name" placeholder="event name . . ." autoresize=true max-width=400 indicateNoValue=true}}.</span></p>
+  <p class="new-event__line">
+    The event I want to plan is called <span class="line-input-with-period">{{line-input value=(mut (get this 'name')) class="new-event__input new-event__name" placeholder="event name . . ." autoresize=true max-width=400 indicateNoValue=true inputClass="line-input__input--blue"}}.</span>
+  </p>
 
-  <p class="new-event__line">It will take place at <span class="line-input-with-period">{{line-input value=(mut (get this 'location')) class="new-event__input new-event__location" placeholder="location  (optional)" autoresize=true max-width=400}}.</span></p>
+  <p class="new-event__line">
+    It will take place at <span class="line-input-with-period">{{line-input value=(mut (get this 'location')) class="new-event__input new-event__location" placeholder="location  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.</span>
+  </p>
 
-  <p class="new-event__line">All you need to know about it is <span class="line-input-with-period">{{line-input value=(mut (get this 'details')) class="new-event__input new-event__details" placeholder="details  (optional)" autoresize=true max-width=400}}.</span></p>
+  <p class="new-event__line">
+    All you need to know about it is <span class="line-input-with-period">{{line-input value=(mut (get this 'details')) class="new-event__input new-event__details" placeholder="details  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.</span>
+  </p>
 
-  <p class="new-event__line">Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret" type="password" placeholder="secret  (optional)" autoresize=true max-width=400}}.</p>
+  <p class="new-event__line">
+    Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret" type="password" placeholder="secret  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.
+  </p>
 
-  <p class="new-event__line">The days that attendees can let me know their availabilities are from {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate') class="new-event__start-date new-event__date" placeholder="start date"}} to <span class="line-input-with-period">{{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate') class="new-event__end-date new-event__date" placeholder="end date"}} .</span></p>
+  <p class="new-event__line">
+    The days that attendees can let me know their availabilities are from {{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectStartDate') class="new-event__start-date new-event__date" placeholder="start date"}} to <span class="line-input-with-period">{{pikaday-input format="MM/DD/YYYY" onSelection=(action 'selectEndDate') class="new-event__end-date new-event__date" placeholder="end date"}} .</span>
+  </p>
 </section>
 
 <section>
@@ -17,7 +27,7 @@
         {{error}}
       {{/liquid-bind}}
     </div>
-    <button {{action "createEvent"}} class="button button--med new-event__create">Create Event</button>
+    <button {{action "createEvent"}} class="button button--med button--blue new-event__create">Create Event</button>
   </div>
     {{#if allInputsFilled}}
       <img class="new-event__message--filled" src="/assets/images/wow.gif">

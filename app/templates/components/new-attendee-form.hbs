@@ -1,5 +1,5 @@
 <section>
-  <h2 class="new-attendee__header">HEY share the dates that you're available OK?</h2>
+  <h2 class="new-attendee__header">Hey share the dates that you're available ok?</h2>
 
   <div class="new-attendee__selectable-months">
     {{#each event.months as |month|}}
@@ -20,18 +20,18 @@
   <div class="form-column form-column--inputs">
     <div class="form-row">
       <label class="form-row__label">My name is</label>
-      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=250 placeholder="name . . ."}}{{#unless event.secret}}.{{/unless}}
+      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=250 placeholder="name . . ." inputClass="line-input__input--blue"}}{{#unless event.secret}}.{{/unless}}
     </div>
 
     <div class="form-row">
       {{#if event.secret}}
         <label class="form-row__label">and the super secret password is</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=200 placeholder="secret . . ." indicateNoValue=true}}.
+        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=200 placeholder="secret . . ." indicateNoValue=true inputClass="line-input__input--blue"}}.
       {{/if}}
     </div>
     <div class="form-row">
       {{#if shouldShowSubmit}}
-        <button {{action "createAttendee"}} class="button form-row__button">Submit</button>
+        <button {{action "createAttendee"}} class="button button--blue form-row__button">Submit</button>
       {{/if}}
     </div>
   </div>

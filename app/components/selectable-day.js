@@ -10,7 +10,7 @@ export default CalendaryDayComponent.extend({
     }
   },
 
-  selectable: Ember.computed('startDate,endDate', function() {
+  selectable: Ember.computed('startDate,endDate,isDateType,date', function() {
     if (!this.get('isDateType')) {
       return 'month-calendar__day--non';
     } else if (this.get('startDate') <= this.get('date') && this.get('date') <= this.get('endDate')) {

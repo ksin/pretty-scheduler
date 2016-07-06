@@ -2,6 +2,10 @@
   &__input {
     @include line-input;
     min-width: 100px;
+
+    &--blue {
+      @include line-input-color(lighten($sasuke-blue, 5%));
+    }
   }
 }
 

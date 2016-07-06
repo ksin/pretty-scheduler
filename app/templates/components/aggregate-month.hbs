@@ -5,19 +5,21 @@
 <table>
   <tbody>
     <tr>
-      <td class="month-calendar__day">sun</td>
-      <td class="month-calendar__day">mon</td>
-      <td class="month-calendar__day">tue</td>
-      <td class="month-calendar__day">wed</td>
-      <td class="month-calendar__day">thu</td>
-      <td class="month-calendar__day">fri</td>
-      <td class="month-calendar__day">sat</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">sun</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">mon</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">tue</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">wed</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">thu</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">fri</td>
+      <td class="month-calendar__day month-calendar__day--aggregate-day">sat</td>
     </tr>
     {{#each daysInMonth as |week|}}
       <tr>
       {{#each week as |date|}}
         {{aggregate-day
             date=date
+            startDate=startDate
+            endDate=endDate
             dateFrequency=dateFrequency}}
       {{/each}}
       </tr>

@@ -6,6 +6,7 @@
     text-align: center;
     font-size: 20px;
     margin: 30px auto;
+    color: lighten($sasuke-blue, 5%);
   }
 
   &__selectable-months {
@@ -66,7 +67,8 @@
 
   &__label {
     font-size: 18px;
-    margin-right: 10px;
+    margin-right: 5px;
+    color: lighten($sasuke-blue, 10%);
   }
 
   &__input {
@@ -78,7 +80,7 @@
   }
 
   &__button {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 120px;
   }
 }
@@ -97,6 +99,11 @@
   &__img {
     display: block;
     width: auto;
+    height: 200px;
+
+    @media screen and (max-width: 1020px) {
+      height: auto;
+    }
   }
 
   &__text {
@@ -106,19 +113,19 @@
     text-align: center;
 
     &--hello {
-
+      color: $naruto-orange;
     }
 
     &--no-name {
-
+      color: $sakura-red;
     }
 
     &--wrong-secret {
-
+      color: $sakura-red;
     }
 
     &--success {
-
+      color: $naruto-orange;
     }
 
   }

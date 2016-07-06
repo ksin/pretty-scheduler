@@ -2,7 +2,14 @@ import Ember from 'ember';
 import CalendarDayComponent from './calendar-day';
 
 export default CalendarDayComponent.extend({
-  classNameBindings: ['frequency', 'isDateType::month-calendar__day--non'],
+  classNames: ['month-calendar__day--aggregate'],
+  classNameBindings: ['frequency', 'unselectable:month-calendar__day--unselectable', 'isDateType::month-calendar__day--non'],
+
+  unselectable: Ember.computed('startDate,endDate,isDateType,date', function() {
+    return !this.get('isDateType') ||
+            this.get('startDate') > this.get('date') ||
+            this.get('date') > this.get('endDate');
+  }),
 
   percentageOfMaxFrequency: Ember.computed('dateFrequency,date', function() {
     let dateFrequency = this.get('dateFrequency');

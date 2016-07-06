@@ -6,11 +6,13 @@
   &__header {
     font-size: 20px;
     margin: 30px auto;
+    color: lighten($sasuke-blue, 5%);
   }
 
   &__legend {
     margin: 30px auto;
     margin-bottom: 5px;
+    color: lighten($sasuke-blue, 10%);
   }
 
   &__check {
@@ -40,6 +42,7 @@
   cursor: pointer;
   margin: 10px 15px;
   padding: 5px 10px;
+  color: lighten($sasuke-blue, 10%);
 
   @media screen and (max-width: 600px) {
     margin: 0.5em 1em;
@@ -47,7 +50,28 @@
   }
 
   &--checking {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid lighten($sasuke-blue, 10%);
+  }
+
+  &__all {
+    &:hover {
+      color: $blue-primary;
+    }
+
+    &--checking {
+    }
+  }
+
+  &__attendees {
+    &:hover {
+      color: $pastel-green;
+      border-color: $pastel-green;
+    }
+
+    &--checking {
+      color: $pastel-green;
+      border-color: $pastel-green;
+    }
   }
 }
 
@@ -71,15 +95,15 @@
     right: 10px;
 
     &--everyone {
-      background-color: lighten(black, 30%);
+      background-color: darken($blue-primary, 40%);
     }
 
     &--more {
-      background-color: lighten(black, 50%);
+      background-color: darken($blue-primary, 25%);
     }
 
     &--few {
-      background-color: lighten(black, 70%);
+      background-color: lighten($blue-primary, 10%);
     }
   }
 }

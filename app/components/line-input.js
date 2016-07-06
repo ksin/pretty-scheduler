@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   actions: {
     focusOut(value) {
       if(this.get('indicateNoValue') && Ember.isBlank(value)) {
-        this.set('noValueClass', "line-input__input--no-value");
+        this.set('noValueClass', " line-input__input--no-value");
       } else {
         this.set('noValueClass', "");
       }
