@@ -36,7 +36,7 @@
 
   &__text {
     text-align: left;
-    color: darken($pastel-blue, 30%);
+    color: lighten(black, 30%);
     font-size: 16px;
     line-height: 24px;
   }
@@ -50,7 +50,19 @@
     right: 60px;
     width: 500px;
     border-radius: 6px;
-    border: 1px solid darken($pastel-blue, 30%);
+    border: 1px solid $pastel-blue;
     background-color: white;
+
+    @media screen and (max-width: 610px) {
+      width: 100%;
+      height: 80%;
+      right: 0;
+      bottom: 60px;
+      overflow: auto;
+    }
+    @media screen and (max-height: 700px) {
+      height: 80%;
+      overflow: auto;
+    }
   }
 }

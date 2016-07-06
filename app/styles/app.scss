@@ -3,6 +3,7 @@
 @import 'colors';
 
 @import 'mixins';
+@import 'liquid-fire';
 @import 'home';
 @import 'event';
 @import 'new-attendee';
@@ -15,7 +16,6 @@
 @import 'attendees-availabilities';
 @import 'about';
 @import 'new-event';
-@import 'liquid-fire';
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;
