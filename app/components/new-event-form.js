@@ -17,7 +17,7 @@ export default Ember.Component.extend({
     } else if (!this.get('hasDates')) {
       this.set('error', "Please enter some dates!");
     } else if (!this.get('isValidDateRange')) {
-      this.set('error', "That date range is invalid. (You can only create events with a 1-2 month range for now)");
+      this.set('error', "That date range is invalid. (Only 1-2 month range for now)");
     } else {
       this.set('error', null);
     }

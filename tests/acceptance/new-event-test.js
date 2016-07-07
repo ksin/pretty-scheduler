@@ -55,7 +55,7 @@ test('invalid date range', function(assert) {
 
   andThen(() => {
     assert.equal(currentURL(), '/events/new');
-    assert.equal(find('.new-event__message--error').text().trim(), "That date range is invalid. (You can only create events with a 1-2 month range for now)");
+    assert.equal(find('.new-event__message--error').text().trim(), "That date range is invalid. (Only 1-2 month range for now)");
   });
 });
 
