@@ -59,7 +59,7 @@ test('invalid date range', function(assert) {
   });
 });
 
-test('fillin in all the fields', function(assert) {
+test('fill in all the fields', function(assert) {
   visit('/events/new');
 
   fillIn('.new-event__name', "NBA Finals 2016");

@@ -12,7 +12,7 @@
   &__legend {
     margin: 30px auto;
     margin-bottom: 5px;
-    color: lighten($sasuke-blue, 10%);
+    color: lighten($sasuke-blue, 5%);
   }
 
   &__check {
@@ -42,7 +42,7 @@
   cursor: pointer;
   margin: 10px 15px;
   padding: 5px 10px;
-  color: lighten($sasuke-blue, 10%);
+  color: lighten($sasuke-blue, 5%);
 
   @media screen and (max-width: 600px) {
     margin: 0.5em 1em;
@@ -50,7 +50,7 @@
   }
 
   &--checking {
-    border-bottom: 2px solid lighten($sasuke-blue, 10%);
+    border-bottom: 2px solid lighten($sasuke-blue, 5%);
   }
 
   &__all {
