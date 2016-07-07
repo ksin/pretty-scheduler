@@ -15,22 +15,20 @@
       <p class="legend"><span class="legend__icon legend__icon--everyone"></span>everyone</p>
     </div>
   {{else}}
-    {{#if isCheckingAttendee}}
-      {{#liquid-bind checking use="crossFade" as |checking|}}
-        {{#each event.months as |month|}}
-          {{attendee-month
-              month=month
-              availableDates=checking.availableDates
-              startDate=event.startDate
-              endDate=event.endDate}}
-        {{/each}}
-      {{/liquid-bind}}
-    {{/if}}
+    {{#liquid-bind checking.availableDates use="crossFade" as |availableDates|}}
+      {{#each event.months as |month|}}
+        {{attendee-month
+            month=month
+            availableDates=availableDates
+            startDate=event.startDate
+            endDate=event.endDate}}
+      {{/each}}
+    {{/liquid-bind}}
   {{/liquid-if}}
 
   <div class="attendees-availabilities__check">
     <div class="check-availabilities__all">
-      {{attendee-to-check click=(action "checkAvailabilityFor" "all") checking=checking attendee="all"}}
+      {{attendee-to-check click=(action "checkAvailabilityFor" allAttendees) checking=checking attendee=allAttendees}}
     </div>
     <div class="check-availabilities__attendees">
       {{#each event.attendees as |attendee|}}

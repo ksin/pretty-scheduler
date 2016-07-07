@@ -1,10 +1,15 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-  checking: "all",
+const allAttendees =  Ember.Object.create({
+  name: "All Attendees",
+  availableDates: [],
+  isAll: true
+});
 
-  isCheckingAll: Ember.computed.equal('checking', "all"),
-  isCheckingAttendee: Ember.computed.equal('checking.constructor.modelName', 'attendee'),
+export default Ember.Component.extend({
+  checking: allAttendees,
+  allAttendees: allAttendees,
+  isCheckingAll: Ember.computed.bool('checking.isAll'),
 
   actions: {
     checkAvailabilityFor(attendee) {
