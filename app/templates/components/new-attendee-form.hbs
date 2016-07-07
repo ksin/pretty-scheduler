@@ -20,13 +20,13 @@
   <div class="form-column form-column--inputs">
     <div class="form-row">
       <label class="form-row__label">My name is</label>
-      {{line-input value=name focusOut=(action "focusOutNameInput") class="form-row__input form-row__input-name" indicateNoValue=true autoresize=true max-width=250 placeholder="name . . ." inputClass="line-input__input--blue"}}{{#unless event.secret}}.{{/unless}}
+      {{line-input value=name focus-out=(action "focusOutNameInput") class="form-row__input form-row__input-name line-input--blue" autoresize=true max-width=250 placeholder="name . . ."}}{{#unless event.secret}}.{{/unless}}
     </div>
 
     <div class="form-row">
       {{#if event.secret}}
         <label class="form-row__label">and the super secret password is</label>
-        {{line-input value=(mut (get this 'secret')) class="form-row__input" type="password" autoresize=true max-width=200 placeholder="secret . . ." indicateNoValue=true inputClass="line-input__input--blue"}}.
+        {{line-input value=(mut (get this 'secret')) class="form-row__input line-input--blue" type="password" autoresize=true max-width=200 placeholder="secret . . ."}}.
       {{/if}}
     </div>
     <div class="form-row">

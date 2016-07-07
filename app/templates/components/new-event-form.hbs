@@ -1,18 +1,18 @@
 <section class="new-event__inputs">
   <p class="new-event__line">
-    The event I want to plan is called <span class="line-input-with-period">{{line-input value=(mut (get this 'name')) class="new-event__input new-event__name" placeholder="event name . . ." autoresize=true max-width=400 indicateNoValue=true inputClass="line-input__input--blue"}}.</span>
+    The event I want to plan is called <span class="line-input-with-period">{{line-input value=(mut (get this 'name')) class="new-event__input new-event__name line-input line-input--blue" placeholder="event name . . ." autoresize=true max-width=400}}.</span>
   </p>
 
   <p class="new-event__line">
-    It will take place at <span class="line-input-with-period">{{line-input value=(mut (get this 'location')) class="new-event__input new-event__location" placeholder="location  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.</span>
+    It will take place at <span class="line-input-with-period">{{line-input value=(mut (get this 'location')) class="new-event__input new-event__location line-input--blue" placeholder="location  (optional)" autoresize=true max-width=400}}.</span>
   </p>
 
   <p class="new-event__line">
-    All you need to know about it is <span class="line-input-with-period">{{line-input value=(mut (get this 'details')) class="new-event__input new-event__details" placeholder="details  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.</span>
+    All you need to know about it is <span class="line-input-with-period">{{line-input value=(mut (get this 'details')) class="new-event__input new-event__details line-input--blue" placeholder="details  (optional)" autoresize=true max-width=400}}.</span>
   </p>
 
   <p class="new-event__line">
-    Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret" type="password" placeholder="secret  (optional)" autoresize=true max-width=400 inputClass="line-input__input--blue"}}.
+    Don't tell anyone that our super secret password is {{line-input value=(mut (get this 'secret')) class="new-event__input new-event__secret line-input--blue" type="password" placeholder="secret  (optional)" autoresize=true max-width=400}}.
   </p>
 
   <p class="new-event__line">

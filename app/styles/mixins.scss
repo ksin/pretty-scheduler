@@ -53,3 +53,9 @@
     color: $color;
   }
 }
+
+@mixin just-text-button($color) {
+  border: none;
+  background-color: transparent;
+  color: $color;
+}

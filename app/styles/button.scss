@@ -70,13 +70,19 @@
         @include inverse-button($tokiwa-blue);
       }
     }
+  }
+
+  &--just-text {
+    @include just-text-button(lighten(black, 30%));
+
     &-purple {
-      @include inverse-button($purple-primary);
+      @include just-text-button($purple-primary);
+
       &:hover {
-        @include inverse-button(darken($purple-primary, 5%));
+        @include just-text-button(darken($purple-primary, 5%));
       }
       &:active {
-        @include inverse-button(darken($purple-primary, 10%));
+        @include just-text-button(darken($purple-primary, 10%));
       }
     }
   }

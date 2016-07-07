@@ -60,6 +60,7 @@
 
 .form-row {
   margin: 20px 0;
+  color: lighten($sasuke-blue, 10%);
 
   &:first-of-type {
     margin-top: 0px;
@@ -68,7 +69,6 @@
   &__label {
     font-size: 18px;
     margin-right: 5px;
-    color: lighten($sasuke-blue, 10%);
   }
 
   &__input {
