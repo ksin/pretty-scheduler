@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  availableDates: Ember.computed(function() {
+    return [];
+  }),
+
   formMessage: null,
   helloText: null,
   hasMessage: Ember.computed.bool('formMessage'),
@@ -66,7 +70,7 @@ export default Ember.Component.extend({
     },
 
     updateAvailableDates(availableDates) {
-      this.set('availableDates', availableDates);
+      this.set('availableDates', this.get('availableDates').concat(availableDates).uniq());
     }
   }
 });
