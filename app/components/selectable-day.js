@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import CalendaryDayComponent from './calendar-day';
+import CalendarDayComponent from './calendar-day';
 
-export default CalendaryDayComponent.extend({
+export default CalendarDayComponent.extend({
   classNameBindings: ['selectable', 'selected:month-calendar__day--selected'],
 
   click() {
-    if (this.get('selectable') !== 'month-calendar__day--unselectable') {
+    if (this.get('selectable') === 'month-calendar__day--selectable') {
       this.sendAction('clickedDate', this.get('date'));
     }
   },

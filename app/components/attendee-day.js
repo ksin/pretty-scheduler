@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import CalendaryDayComponent from './calendar-day';
+import CalendarDayComponent from './calendar-day';
 
-export default CalendaryDayComponent.extend({
+export default CalendarDayComponent.extend({
   classNameBindings: ['available:month-calendar__day--available'],
 
   available: Ember.computed('availableTimes.[],date', function() {
