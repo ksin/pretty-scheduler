@@ -25,11 +25,11 @@ moduleForIntegration('Integration | Component | aggregate-month', {
 });
 
 test('renders calendar month', function(assert) {
-  assert.equal(this.$('.month-calendar__heading--aggregate').text().trim(), "February 2016");
+  assert.equal(this.$('.month-calendar__heading').text().trim(), "February 2016");
 });
 
 test('indicates frequency of day', function(assert) {
-  assert.ok(this.$('.month-calendar__day--aggregate:contains(10)').hasClass('everyone'));
-  assert.ok(this.$('.month-calendar__day--aggregate:contains(11)').hasClass('more'));
-  assert.ok(this.$('.month-calendar__day--aggregate:contains(12)').hasClass('few'));
+  assert.ok(this.$('.month-calendar__day--aggregate:contains(10)').hasClass('month-calendar__day--everyone'));
+  assert.ok(this.$('.month-calendar__day--aggregate:contains(11)').hasClass('month-calendar__day--more'));
+  assert.ok(this.$('.month-calendar__day--aggregate:contains(12)').hasClass('month-calendar__day--few'));
 });

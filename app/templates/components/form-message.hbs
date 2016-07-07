@@ -1,6 +1,6 @@
 {{#liquid-bind displayText use="fade" as |displayText|}}
   <p class="form-message__text">{{displayText}}</p>
 {{/liquid-bind}}
-{{#liquid-bind imgSrc use="fade" as |imgSrc|}}
-  <img src={{imgSrc}} class="form-message__img">
+{{#liquid-bind image use="fade" as |image|}}
+  <img src={{image.src}} alt={{image.alt}} class="form-message__img">
 {{/liquid-bind}}

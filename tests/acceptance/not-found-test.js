@@ -9,7 +9,7 @@ test('visiting /not-found', function(assert) {
   andThen(() =>{
     assert.equal(currentURL(), '/not-found');
     assert.equal(find('.not-found__heading').text(), "404 Not Found");
-    assert.equal(find('.not-found__message').text().trim(), "there's nothing to see here!!! D:");
+    assert.equal(find('.not-found__message').text().trim(), "there's nothing to see here");
   });
 });
 

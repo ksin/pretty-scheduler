@@ -20,18 +20,18 @@ export default Ember.Component.extend({
     }
   }),
 
-  imgSrc: Ember.computed('message', function() {
+  image: Ember.computed('message', function() {
     switch(this.get('message')) {
       case 'new-attendee:hello':
-        return "/assets/images/hello.gif";
+        return { src: "/assets/images/hello.gif", alt: "GIF of a dog jumping up and waving HI" };
       case 'new-attendee:no-name':
-        return "/assets/images/no-name.gif";
+        return { src: "/assets/images/no-name.gif", alt: "GIF of a dog with fire in its eyes" };
       case 'new-attendee:wrong-secret':
-        return "/assets/images/wrong-secret.gif";
+        return { src: "/assets/images/wrong-secret.gif", alt: "GIF of a dog barking" };
       case 'new-attendee:success':
-        return "/assets/images/success.gif";
+        return { src: "/assets/images/success.gif", alt: "GIF of two small round dogs giving each other a paw high five" };
       default:
-        return null;
+        return {};
     }
   }),
 
