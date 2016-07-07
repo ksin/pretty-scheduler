@@ -7,6 +7,8 @@ const allAttendees =  Ember.Object.create({
 });
 
 export default Ember.Component.extend({
+  classNames: ['attendees-availabilities'],
+
   checking: allAttendees,
   allAttendees: allAttendees,
   isCheckingAll: Ember.computed.bool('checking.isAll'),

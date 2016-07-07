@@ -5,7 +5,7 @@
     <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-purple event-calendars__toggle">Check out the dates that attendees are available yo!</button>
   {{/if}}
 {{else}}
-  {{attendees-availabilities event=event class="attendees-availabilities"}}
+  {{attendees-availabilities event=event}}
   <span class="divider divider--purple"></span>
   <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-purple event-calendars__toggle">Hey share the dates that you're available ok?</button>
 {{/liquid-if}}
