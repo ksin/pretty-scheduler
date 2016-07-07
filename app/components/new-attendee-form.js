@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['new-attendee'],
+
   availableDates: Ember.computed(function() {
     return [];
   }),

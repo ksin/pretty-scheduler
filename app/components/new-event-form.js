@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ["new-event__form"],
+
   error: null,
 
   isValidEvent: Ember.computed('name,hasDates,isValidDateRange', function() {
