@@ -5,9 +5,8 @@ export default Ember.Component.extend({
     return [];
   }),
 
-  formMessage: null,
+  formMessage: 'new-attendee:no-message',
   helloText: null,
-  hasMessage: Ember.computed.bool('formMessage'),
 
   // temporary | should validate on server, obviously.
   isValidSecret: Ember.computed('secret,event.secret', function() {
@@ -25,7 +24,7 @@ export default Ember.Component.extend({
     } else if (!this.get('isValidSecret')) {
       this.set('formMessage', 'new-attendee:wrong-secret');
     } else {
-      this.set('formMessage', null);
+      this.set('formMessage', 'new-attendee:no-message');
     }
   },
 
@@ -63,7 +62,7 @@ export default Ember.Component.extend({
         this.set('formMessage', 'new-attendee:hello');
         this.set('helloText', name);
       } else {
-        this.set('formMessage', null);
+        this.set('formMessage', 'new-attendee:no-message');
         this.set('helloText', null);
       }
       this.set('name', name);

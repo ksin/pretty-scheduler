@@ -91,6 +91,22 @@
   width: 238px;
   border-radius: 4px;
 
+  &--hello {
+    color: $naruto-orange;
+  }
+
+  &--no-name {
+    color: $sakura-red;
+  }
+
+  &--wrong-secret {
+    color: $sakura-red;
+  }
+
+  &--success {
+    color: $naruto-orange;
+  }
+
   @media screen and (max-width: 1020px) {
     margin: 0;
     width: auto;
@@ -111,23 +127,6 @@
     padding: 6px;
     font-size: 18px;
     text-align: center;
-
-    &--hello {
-      color: $naruto-orange;
-    }
-
-    &--no-name {
-      color: $sakura-red;
-    }
-
-    &--wrong-secret {
-      color: $sakura-red;
-    }
-
-    &--success {
-      color: $naruto-orange;
-    }
-
   }
 }
 
