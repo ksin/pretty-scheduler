@@ -75,7 +75,7 @@
 
     &--error {
       font-size: 18px;
-      color: $sakura-red;
+      color: darken($sakura-red, 7%);
       font-weight: bold;
       display: block;
       padding: 5px;
