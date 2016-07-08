@@ -19,6 +19,14 @@ module.exports = function(environment) {
     }
   };
 
+  /**
+    Set axe rules and options for the test and development environments here.
+
+    Example usage:
+
+    Toggle "color-contrast" enabled while developing/testing so that you
+    can gradually fix things color-contrast related.
+  */
   var axeOptions = {
     rules: {
       "color-contrast": { enabled: false }
