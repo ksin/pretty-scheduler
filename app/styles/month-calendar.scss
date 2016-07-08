@@ -36,6 +36,7 @@
     width: 80px;
     padding: 10px;
     color: lighten($sasuke-blue, 5%);
+    display: table-cell;
 
     @media screen and (max-width: 1250px) {
       padding: 10px;

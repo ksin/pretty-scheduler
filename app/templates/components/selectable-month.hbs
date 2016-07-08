@@ -2,28 +2,24 @@
   {{monthName}} <sub class="month-calendar__year">{{year}}</sub>
 </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td class="month-calendar__day month-calendar__day--select-day">sun</td>
-      <td class="month-calendar__day month-calendar__day--select-day">mon</td>
-      <td class="month-calendar__day month-calendar__day--select-day">tue</td>
-      <td class="month-calendar__day month-calendar__day--select-day">wed</td>
-      <td class="month-calendar__day month-calendar__day--select-day">thu</td>
-      <td class="month-calendar__day month-calendar__day--select-day">fri</td>
-      <td class="month-calendar__day month-calendar__day--select-day">sat</td>
-    </tr>
-    {{#each daysInMonth as |week|}}
-      <tr>
-      {{#each week as |date|}}
-        {{selectable-day
-            date=date
-            startDate=startDate
-            endDate=endDate
-            selectedDates=selectedDates
-            clickedDate="clickedDate"}}
-      {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div>
+  <div class="month-calendar__day month-calendar__day--select-day">sun</div>
+  <div class="month-calendar__day month-calendar__day--select-day">mon</div>
+  <div class="month-calendar__day month-calendar__day--select-day">tue</div>
+  <div class="month-calendar__day month-calendar__day--select-day">wed</div>
+  <div class="month-calendar__day month-calendar__day--select-day">thu</div>
+  <div class="month-calendar__day month-calendar__day--select-day">fri</div>
+  <div class="month-calendar__day month-calendar__day--select-day">sat</div>
+</div>
+{{#each daysInMonth as |week|}}
+  <div>
+  {{#each week as |date|}}
+    {{selectable-day
+        date=date
+        startDate=startDate
+        endDate=endDate
+        selectedDates=selectedDates
+        clickedDate="clickedDate"}}
+  {{/each}}
+  </div>
+{{/each}}

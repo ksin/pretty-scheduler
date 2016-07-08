@@ -2,27 +2,23 @@
   {{monthName}} <sub class="month-calendar__year">{{year}}</sub>
 </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">sun</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">mon</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">tue</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">wed</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">thu</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">fri</td>
-      <td class="month-calendar__day month-calendar__day--aggregate-day">sat</td>
-    </tr>
-    {{#each daysInMonth as |week|}}
-      <tr>
-      {{#each week as |date|}}
-        {{aggregate-day
-            date=date
-            startDate=startDate
-            endDate=endDate
-            dateFrequency=dateFrequency}}
-      {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">sun</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">mon</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">tue</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">wed</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">thu</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">fri</div>
+  <div class="month-calendar__day month-calendar__day--aggregate-day">sat</div>
+</div>
+{{#each daysInMonth as |week|}}
+  <div>
+  {{#each week as |date|}}
+    {{aggregate-day
+        date=date
+        startDate=startDate
+        endDate=endDate
+        dateFrequency=dateFrequency}}
+  {{/each}}
+  </div>
+{{/each}}

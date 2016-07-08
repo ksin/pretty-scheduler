@@ -2,25 +2,21 @@
   {{monthName}} <sub class="month-calendar__year">{{year}}</sub>
 </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td class="month-calendar__day">sun</td>
-      <td class="month-calendar__day">mon</td>
-      <td class="month-calendar__day">tue</td>
-      <td class="month-calendar__day">wed</td>
-      <td class="month-calendar__day">thu</td>
-      <td class="month-calendar__day">fri</td>
-      <td class="month-calendar__day">sat</td>
-    </tr>
-    {{#each daysInMonth as |week|}}
-      <tr>
-      {{#each week as |date|}}
-        {{attendee-day
-            date=date
-            availableTimes=availableTimes}}
-      {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div>
+  <div class="month-calendar__day">sun</div>
+  <div class="month-calendar__day">mon</div>
+  <div class="month-calendar__day">tue</div>
+  <div class="month-calendar__day">wed</div>
+  <div class="month-calendar__day">thu</div>
+  <div class="month-calendar__day">fri</div>
+  <div class="month-calendar__day">sat</div>
+</div>
+{{#each daysInMonth as |week|}}
+  <div>
+  {{#each week as |date|}}
+    {{attendee-day
+        date=date
+        availableTimes=availableTimes}}
+  {{/each}}
+  </div>
+{{/each}}
