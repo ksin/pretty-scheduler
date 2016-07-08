@@ -22,9 +22,9 @@
 
 <section>
   <div class="new-event__submit">
-    <div class="new-event__message new-event__message--error">
+    <div class="new-event__message">
       {{#liquid-bind error use="toLeft" as |error|}}
-        {{error}}
+        <span class="new-event__message--error">{{error}}</span>
       {{/liquid-bind}}
     </div>
     <button {{action "createEvent"}} class="button button--med button--blue new-event__create">Create Event</button>
