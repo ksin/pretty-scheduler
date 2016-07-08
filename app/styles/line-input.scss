@@ -1,9 +1,9 @@
 .line-input {
-  @include line-input;
+  @include line-input(black);
   min-width: 100px;
 
   &--blue {
-    @include line-input-color(lighten($sasuke-blue, 5%));
+    @include line-input(lighten($sasuke-blue, 5%));
   }
 }
 

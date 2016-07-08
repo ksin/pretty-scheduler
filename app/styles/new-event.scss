@@ -44,8 +44,7 @@
   }
 
   &__date {
-    @include line-input;
-    @include line-input-color($sasuke-blue);
+    @include line-input($sasuke-blue);
     width: 100px;
     text-align: center;
   }

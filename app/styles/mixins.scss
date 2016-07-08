@@ -5,14 +5,15 @@
   transition: all .15s ease-in-out;
 }
 
-@mixin line-input {
+@mixin line-input($color) {
   font-family: 'Dosis', sans-serif;
   border: none;
   background: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $color;
   padding: 2px;
   font-size: 18px;
   font-weight: bold;
+  color: $color;
 
   &::-webkit-input-placeholder {
     font-weight: normal;
@@ -29,11 +30,6 @@
   &:-ms-input-placeholder {
     font-weight: normal;
   }
-}
-
-@mixin line-input-color($color) {
-  border-color: $color;
-  color: $color;
 }
 
 @mixin inverse-button($color) {
