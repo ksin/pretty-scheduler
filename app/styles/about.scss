@@ -3,7 +3,7 @@
   &__icon {
     display: block;
     border: 1px solid $pastel-blue;
-    color: $pastel-blue;
+    color: darken($pastel-blue, 16%);
     width: 35px;
     height: 35px;
     position: fixed;
