@@ -1,4 +1,6 @@
-{{#liquid-bind display use="fade" as |display|}}
-  <p class="form-message__text">{{display.text}}</p>
-  <img src={{display.image.src}} alt={{display.image.alt}} class="form-message__img">
-{{/liquid-bind}}
+{{#if shouldDisplay}}
+  {{#liquid-bind display use="fade" as |display|}}
+    <p class="form-message__text">{{display.text}}</p>
+    <img src={{display.image.src}} alt={{display.image.alt}} class="form-message__img">
+  {{/liquid-bind}}
+{{/if}}

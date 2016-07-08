@@ -9,6 +9,10 @@ export default Ember.Component.extend({
     return this.get('display').modifier;
   }),
 
+  shouldDisplay: Ember.computed('formMessage', function() {
+    return this.get('formMessage') !== 'new-attendee:no-message';
+  }),
+
   display: Ember.computed('displays,formMessage', function() {
     return this.get('displays')[this.get('formMessage')];
   }),
@@ -49,7 +53,10 @@ export default Ember.Component.extend({
       },
       'new-attendee:no-message': {
         text: '',
-        image: {},
+        image: {
+          src: "",
+          alt: "No image shown"
+        },
         modifier: ''
       }
     };
