@@ -1,3 +1,5 @@
+/* globals axe */
+
 import Ember from 'ember';
 import Application from '../../app';
 import config from '../../config/environment';
@@ -13,6 +15,8 @@ export default function startApp(attrs) {
     application.setupForTesting();
     application.injectTestHelpers();
   });
+
+  axe.ember.testOptions = config['ember-a11y-testing'].testOptions;
 
   return application;
 }

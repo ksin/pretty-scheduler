@@ -8,6 +8,7 @@
     "pretender": "~1.1.0",
     "Faker": "~3.1.0",
     "pikaday": "^1.4.0",
-    "dom-ruler": "0.1.13"
+    "dom-ruler": "0.1.13",
+    "axe-core": "1.1.1"
   }
 }

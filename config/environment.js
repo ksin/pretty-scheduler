@@ -19,12 +19,25 @@ module.exports = function(environment) {
     }
   };
 
+  var axeOptions = {
+    rules: {
+      "color-contrast": { enabled: false }
+    }
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV['ember-a11y-testing'] = {
+      componentOptions: {
+        axeOptions: axeOptions
+      }
+    };
+
   }
 
   if (environment === 'test') {
@@ -37,6 +50,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV['ember-a11y-testing'] = {
+      testOptions: axeOptions
+    };
+
   }
 
   if (environment === 'production') {
