@@ -56,9 +56,7 @@
   &__all {
     &:hover {
       color: $blue-primary;
-    }
-
-    &--checking {
+      border-color: $blue-primary;
     }
   }
 
