@@ -56,26 +56,18 @@
       color: lighten($sasuke-blue, 5%);
 
       &:hover {
-        background-color: $pink-primary;
+        background-color: lighten($sasuke-blue, 5%);
         color: white;
-      }
-
-      &:active {
-        background-color: darken($pink-primary, 5%);
       }
     }
 
     &--selected {
-      background-color: lighten($pink-primary, 5%);
+      background-color: lighten($sasuke-blue, 5%);
       color: white;
 
       &:hover {
-        background-color: $pink-primary;
-        color: lighten($sasuke-blue, 5%);
-      }
-
-      &:active {
-        background-color: darken($pink-primary, 5%);
+        background-color: $sasuke-blue;
+        color: white;
       }
     }
 
