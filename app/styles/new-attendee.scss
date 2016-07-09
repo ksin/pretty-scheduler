@@ -1,20 +1,16 @@
 .new-attendee {
-  margin: 20px auto;
-  margin-bottom: 30px;
+  margin: 30px auto;
+  text-align: center;
 
   &__header {
     text-align: center;
     font-size: 20px;
     margin: 30px auto;
-    color: lighten($sasuke-blue, 5%);
-  }
-
-  &__selectable-months {
-    text-align: center;
+    color: $off-black;
   }
 
   &__form {
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
 
     @media screen and (max-width: 1020px) {
@@ -35,7 +31,6 @@
   }
   @media screen and (max-width: 1020px) {
     width: 540px;
-    margin: 0;
   }
   @media screen and (max-width: 455px) {
     width: auto;
@@ -60,7 +55,7 @@
 
 .form-row {
   margin: 20px 0;
-  color: lighten($sasuke-blue, 5%);
+  color: $off-black;
 
   &:first-of-type {
     margin-top: 0px;
@@ -92,7 +87,7 @@
   border-radius: 4px;
 
   &--hello {
-    color: $naruto-orange;
+    color: lighten($safe-teal, 8%);
   }
 
   &--no-name {
@@ -104,7 +99,7 @@
   }
 
   &--success {
-    color: $naruto-orange;
+    color: lighten($safe-green, 8%);
   }
 
   @media screen and (max-width: 1020px) {
@@ -124,8 +119,9 @@
 
   &__text {
     display: block;
-    padding: 6px;
-    font-size: 18px;
+    padding: 5px;
+    font-size: 19px;
+    font-weight: bold;
     text-align: center;
   }
 }

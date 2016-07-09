@@ -1,7 +1,7 @@
 .month-calendar {
   display: inline-block;
-  border: 1px solid lighten($sasuke-blue, 20%);
   margin: 0 30px;
+  border: 1px solid lighten($off-black, 45%);
   border-radius: 4px;
   text-align: center;
   padding: 5px 0;
@@ -13,17 +13,16 @@
     display: block;
     width: 455px;
     margin: auto;
-    margin-bottom: 30px;
   }
   @media screen and (max-width: 455px) {
     width: 100%;
   }
 
   &__heading {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 19px;
+    margin: 10px 0;
     margin-left: 30px;
-    color: lighten($sasuke-blue, 5%);
+    color: $off-black;
   }
 
   &__year {
@@ -35,7 +34,6 @@
     font-size: 18px;
     width: 80px;
     padding: 10px;
-    color: lighten($sasuke-blue, 5%);
     display: table-cell;
 
     @media screen and (max-width: 1250px) {
@@ -48,7 +46,7 @@
     }
 
     &--out-range {
-      color: lighten(black, 70%);
+      color: $off-black;
     }
 
     &--in-range {
@@ -75,22 +73,22 @@
     }
 
     &--everyone {
-      background-color: darken($blue-primary, 40%);
+      background-color: darken($safe-blue, 5%);
       color: white;
     }
 
     &--more {
-      background-color: darken($blue-primary, 25%);
+      background-color: $safe-blue-2;
       color: white;
     }
 
     &--few {
-      background-color: lighten($blue-primary, 10%);
+      background-color: lighten($safe-blue-3, 7%);
       color: white;
     }
 
     &--available {
-      background-color: $pastel-green;
+      background-color: $safe-teal-2;
       color: white;
     }
   }

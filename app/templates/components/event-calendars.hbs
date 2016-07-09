@@ -1,11 +1,11 @@
 {{#liquid-if isShowingNewAttendeeCalendar use="fade"}}
   {{new-attendee-form event=event createAttendee=(route-action "createAttendee")}}
-  <span class="divider divider--purple"></span>
+  <span class="divider divider--blue"></span>
   {{#if hasAttendees}}
-    <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-purple event-calendars__toggle">Check out the dates that attendees are available yo!</button>
+    <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-blue event-calendars__toggle">Check out the dates that attendees are available yo!</button>
   {{/if}}
 {{else}}
   {{attendees-availabilities event=event}}
-  <span class="divider divider--purple"></span>
-  <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-purple event-calendars__toggle">Hey share the dates that you're available ok?</button>
+  <span class="divider divider--blue"></span>
+  <button {{action "toggleCalendars"}} class="button button--just-text button--just-text-blue event-calendars__toggle">Hey share the dates that you're available ok?</button>
 {{/liquid-if}}

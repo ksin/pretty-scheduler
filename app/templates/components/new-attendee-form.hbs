@@ -1,15 +1,13 @@
 <section>
   <h2 class="new-attendee__header">Hey share the dates that you're available ok?</h2>
 
-  <div class="new-attendee__selectable-months">
-    {{#each event.months as |month|}}
-      {{selectable-month
-          month=month
-          startDate=event.startDate
-          endDate=event.endDate
-          onDateClick="updateAvailableDates"}}
-    {{/each}}
-  </div>
+  {{#each event.months as |month|}}
+    {{selectable-month
+        month=month
+        startDate=event.startDate
+        endDate=event.endDate
+        onDateClick="updateAvailableDates"}}
+  {{/each}}
 </section>
 
 <section class="new-attendee__form">

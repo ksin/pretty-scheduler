@@ -73,14 +73,14 @@
   &--just-text {
     @include just-text-button(lighten(black, 30%));
 
-    &-purple {
-      @include just-text-button(darken($purple-primary, 5%));
+    &-blue {
+      @include just-text-button(lighten($sasuke-blue, 5%));
 
       &:hover {
-        @include just-text-button(darken($purple-primary, 10%));
+        @include just-text-button($sasuke-blue);
       }
       &:active {
-        @include just-text-button(darken($purple-primary, 15%));
+        @include just-text-button($sasuke-blue);
       }
     }
   }

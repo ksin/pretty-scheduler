@@ -29,7 +29,6 @@ module.exports = function(environment) {
   */
   var axeOptions = {
     rules: {
-      "color-contrast": { enabled: false }
     }
   };
 

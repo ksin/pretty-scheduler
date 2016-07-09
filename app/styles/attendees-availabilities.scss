@@ -1,12 +1,11 @@
 .attendees-availabilities {
-  margin: 20px auto;
+  margin: 30px auto;
   text-align: center;
-  margin-bottom: 60px;
 
   &__header {
     font-size: 20px;
     margin: 30px auto;
-    color: lighten($sasuke-blue, 5%);
+    color: $off-black;
   }
 
   &__legend {
@@ -16,7 +15,7 @@
   }
 
   &__check {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 18px;
     text-align: center;
   }
@@ -55,20 +54,20 @@
 
   &__all {
     &:hover {
-      color: $blue-primary;
-      border-color: $blue-primary;
+      color: $safe-blue-2;
+      border-color: $safe-blue-2;
     }
   }
 
   &__attendees {
     &:hover {
-      color: $pastel-green;
-      border-color: $pastel-green;
+      color: $safe-teal-2;
+      border-color: $safe-teal-2;
     }
 
     &--checking {
-      color: $pastel-green;
-      border-color: $pastel-green;
+      color: $safe-teal-2;
+      border-color: $safe-teal-2;
     }
   }
 }
@@ -77,6 +76,7 @@
   display: inline-block;
   margin: 0 30px;
   font-size: 16px;
+  color: $off-black;
 
   @media screen and (max-width: 350px) {
     margin: 5px 30px;
@@ -93,15 +93,15 @@
     right: 10px;
 
     &--everyone {
-      background-color: darken($blue-primary, 40%);
+      background-color:  darken($safe-blue, 5%);
     }
 
     &--more {
-      background-color: darken($blue-primary, 25%);
+      background-color: $safe-blue-2;
     }
 
     &--few {
-      background-color: lighten($blue-primary, 10%);
+      background-color: lighten($safe-blue-3, 7%);
     }
   }
 }
