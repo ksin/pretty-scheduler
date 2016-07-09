@@ -4,7 +4,7 @@
   margin: 0 30px;
   border-radius: 4px;
   text-align: center;
-
+  padding: 5px 0;
 
   @media screen and (max-width: 1110px) {
     margin: 0 5px;
@@ -21,7 +21,7 @@
 
   &__heading {
     font-size: 20px;
-    padding: 20px;
+    padding: 10px;
     margin-left: 30px;
     color: lighten($sasuke-blue, 5%);
   }
