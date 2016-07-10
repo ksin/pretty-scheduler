@@ -51,7 +51,7 @@ export default Model.extend({
     dateFrequency["max"] = 1;
     this.get('attendees').forEach((attendee) => {
       attendee.get('availableDates').forEach((dateOrString) => {
-        let date = moment(dateOrString); // ensures coercion to moment date
+        let date = moment.utc(dateOrString); // ensures coercion to moment date
         if (dateFrequency[date]) {
           dateFrequency[date] = dateFrequency[date] + 1;
           if (dateFrequency[date] > dateFrequency["max"]) {

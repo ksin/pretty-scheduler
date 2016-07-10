@@ -6,8 +6,8 @@ import { test } from 'ember-qunit';
 moduleForIntegration('Integration | Component | selectable-month', {
   beforeEach() {
     this.set('month', 1);
-    this.set('startDate', moment('2016-2-10'));
-    this.set('endDate', moment('2016-3-1'));
+    this.set('startDate', moment.utc('2016-2-10'));
+    this.set('endDate', moment.utc('2016-3-1'));
     this.set('updateDatesCalled', 0);
     this.on('updateDates', function(dates) {
       this.set('dates', dates);
@@ -35,7 +35,7 @@ test('only dates within startDate and endDate range are selectable', function(as
 test('clicking selectable date', function(assert) {
   this.$('.month-calendar__day:contains(11)').click();
 
-  assert.ok(this.get('dates')[0].isSame(moment('2016-2-11')), "sends 'onDateClick' with added date");
+  assert.ok(this.get('dates')[0].isSame(moment.utc('2016-2-11')), "sends 'onDateClick' with added date");
   assert.ok(this.$('.month-calendar__day:contains(11)').hasClass('month-calendar__day--selected'), "adds 'selected' class on calendar day");
 
   this.$('.month-calendar__day:contains(11)').click();

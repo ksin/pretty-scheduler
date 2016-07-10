@@ -14,10 +14,10 @@ export default CalendarDayComponent.extend({
   selectable: Ember.computed('startDate,endDate,isDateType,date', function() {
     if (!this.get('isDateType')) {
       return 'month-calendar__day--non';
-    } else if (this.get('startDate') <= this.get('date') && this.get('date') <= this.get('endDate')) {
-      return 'month-calendar__day--selectable';
+    } else if (this.get('date').isBefore(this.get('startDate')) || this.get('date').isAfter(this.get('endDate'))) {
+      return 'month-calendar__day--unselectable';
     }
-    return 'month-calendar__day--unselectable';
+    return 'month-calendar__day--selectable';
   }),
 
   selected: Ember.computed('selectedDates.[],date', function() {

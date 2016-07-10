@@ -31,12 +31,12 @@ export default Ember.Component.extend({
   daysInMonth: Ember.computed('month,year', function() {
     let month = this.get('month');
     let year = parseInt(this.get('year'));
-    let date = moment(`${year}-${month+1}-1`);
+    let date = moment.utc(`${year}-${month+1}-1`);
     let days = [];
     days.push(this.preFirstDay(date.day()));
 
     while (date.month() === month) {
-      days[days.length-1].push(moment(date));
+      days[days.length-1].push(moment.utc(date));
 
       if (date.day() === 6) {
         date.add('days', 1);

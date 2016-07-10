@@ -7,8 +7,8 @@ moduleForAcceptance('Acceptance | new attendee', {
     server.create('event', {
       name: "Day of the Black Sun",
       secret: "roku",
-      startDate: moment('2016-2-10'),
-      endDate: moment('2016-3-31')}
+      startDate: '2016-2-10',
+      endDate: '2016-03-31'}
     );
   }
 });
@@ -37,7 +37,7 @@ test('successfully create attendee with availabilities', function(assert) {
   andThen(() => {
     assert.equal(server.db.attendees[0].name, "Steven Universe", "Attendee name is saved to server");
     assert.deepEqual(server.db.attendees[0].availableDates, [
-      (moment('2016-2-29')).toJSON(), (moment('2016-3-31')).toJSON()
+      (moment.utc('2016-2-29')).toJSON(), (moment.utc('2016-3-31')).toJSON()
     ], "Available dates are saved to server");
     assert.equal(find('.form-message__text').text().trim(), "BOO-YAH! Your dates are saved.");
     assert.equal(find('.form-message__img').attr('src'), "/assets/images/success.gif");

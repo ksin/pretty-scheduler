@@ -5,12 +5,12 @@ import { test } from 'ember-qunit';
 
 moduleForIntegration('Integration | Component | aggregate-day', {
   beforeEach() {
-    this.set('startDate', moment('2016-2-10'));
-    this.set('endDate', moment('2016-3-1'));
+    this.set('startDate', moment.utc('2016-2-10'));
+    this.set('endDate', moment.utc('2016-3-1'));
     this.set('dateFrequency', {
-      [moment('2016-2-10')]: 10,
-      [moment('2016-2-11')]: 7,
-      [moment('2016-2-12')]: 4,
+      [moment.utc('2016-2-10')]: 10,
+      [moment.utc('2016-2-11')]: 7,
+      [moment.utc('2016-2-12')]: 4,
       "max": 10
     });
 
@@ -25,23 +25,23 @@ moduleForIntegration('Integration | Component | aggregate-day', {
 });
 
 test('renders aggregate day', function(assert) {
-  this.set('date', moment('2016-2-10'));
+  this.set('date', moment.utc('2016-2-10'));
   assert.equal(this.$('.month-calendar__day--aggregate').text().trim(), "10");
 });
 
 test('renders frequency of date', function(assert) {
-  this.set('date', moment('2016-2-10'));
+  this.set('date', moment.utc('2016-2-10'));
   assert.ok(this.$('.month-calendar__day--aggregate').hasClass("month-calendar__day--everyone"));
 
-  this.set('date', moment('2016-2-11'));
+  this.set('date', moment.utc('2016-2-11'));
   assert.ok(this.$('.month-calendar__day--aggregate').hasClass("month-calendar__day--more"));
 
-  this.set('date', moment('2016-2-12'));
+  this.set('date', moment.utc('2016-2-12'));
   assert.ok(this.$('.month-calendar__day--aggregate').hasClass("month-calendar__day--few"));
 });
 
 test('indicates if date is unselectable due to being outside date range', function(assert) {
-  this.set('date', moment('2016-2-9'));
+  this.set('date', moment.utc('2016-2-9'));
   assert.ok(this.$('.month-calendar__day--aggregate').hasClass("month-calendar__day--unselectable"));
 });
 

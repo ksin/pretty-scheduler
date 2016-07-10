@@ -27,7 +27,7 @@ export default Ember.Component.extend({
   isValidDateRange: Ember.computed('startDate,endDate', function() {
     let startDate = this.get('startDate');
     let endDate = this.get('endDate');
-    let maxDate = moment(new Date(startDate.year(), startDate.month() + 2, 0));
+    let maxDate = moment.utc(new Date(startDate.year(), startDate.month() + 2, 0));
     return startDate <= endDate && endDate <= maxDate;
   }),
 
@@ -58,10 +58,10 @@ export default Ember.Component.extend({
 
   actions: {
     selectStartDate(date) {
-      this.set('startDate', moment(date));
+      this.set('startDate', moment.utc(date));
     },
     selectEndDate(date) {
-      this.set('endDate', moment(date));
+      this.set('endDate', moment.utc(date));
     },
 
     createEvent() {

@@ -5,7 +5,7 @@ import { test } from 'ember-qunit';
 
 moduleForIntegration('Integration | Component | calendar-day', {
   beforeEach() {
-    this.set('date', moment('2016-2-10'));
+    this.set('date', moment.utc('2016-2-10'));
     this.render(hbs`
       {{calendar-day date=date}}
     `);

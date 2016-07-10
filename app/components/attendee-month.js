@@ -9,7 +9,7 @@ export default MonthCalendarComponent.extend({
   */
   availableMoments: Ember.computed('availableDates', function() {
     return this.get('availableDates').map(function(date) {
-      return moment(date);
+      return moment.utc(date);
     });
   })
 });

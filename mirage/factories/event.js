@@ -6,7 +6,7 @@ export default Factory.extend({
   details() { return faker.lorem.sentence(); },
   location() { return faker.address.streetAddress(); },
   secret() { return faker.internet.password(); },
-  startDate() { return moment(faker.date.future()); },
+  startDate() { return moment.utc(faker.date.future()).toISOString(); },
 
   /**
     endDate is constrained to startDate + (up to 30 days)
@@ -16,6 +16,6 @@ export default Factory.extend({
     let date = this.startDate;
     let rand30 = Math.random() * (30 - 1) + 1;
     date.add('days', rand30);
-    return moment(date);
+    return moment.utc(date).toISOString();
   }
 });

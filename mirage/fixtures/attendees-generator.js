@@ -1,21 +1,19 @@
-/* globals moment */
-
 function generateAttendee(id) {
   return {
     id: id,
     name: `Attendee #${id}`,
     eventId: 23,
     availableDates: [
-                      moment('2016-2-10'),
-                      moment('2016-2-11'),
-                      moment('2016-2-12'),
-                      moment('2016-2-13'),
-                      moment('2016-2-14'),
-                      moment('2016-2-15'),
-                      moment('2016-2-16'),
-                      moment('2016-2-17'),
-                      moment('2016-3-3'),
-                      moment('2016-3-8')
+                      '2016-2-10',
+                      '2016-2-11',
+                      '2016-2-12',
+                      '2016-2-13',
+                      '2016-2-14',
+                      '2016-2-15',
+                      '2016-2-16',
+                      '2016-2-17',
+                      '2016-3-3',
+                      '2016-3-8'
   ]};
 }
 

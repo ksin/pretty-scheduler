@@ -6,12 +6,12 @@ import { test } from 'ember-qunit';
 moduleForIntegration('Integration | Component | aggregate-month', {
   beforeEach() {
     this.set('month', 1);
-    this.set('startDate', moment('2016-2-10'));
-    this.set('endDate', moment('2016-3-01'));
+    this.set('startDate', moment.utc('2016-2-10'));
+    this.set('endDate', moment.utc('2016-3-01'));
     this.set('dateFrequency', {
-      [moment('2016-2-10')]: 10,
-      [moment('2016-2-11')]: 7,
-      [moment('2016-2-12')]: 4,
+      [moment.utc('2016-2-10')]: 10,
+      [moment.utc('2016-2-11')]: 7,
+      [moment.utc('2016-2-12')]: 4,
       "max": 10
     });
 

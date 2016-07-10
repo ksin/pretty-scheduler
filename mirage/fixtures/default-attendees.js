@@ -88,7 +88,7 @@ export default [
     name: "meowlice",
     eventId: 23,
     availableDates: [
-                      '2016-1-9'
+                      '2016-1-9',
                       '2016-1-10',
                       '2016-1-12',
                       '2016-1-13',
