@@ -1,6 +1,4 @@
-function date(year, month, day) {
-  return new Date(year, month, day);
-}
+/* globals moment */
 
 function generateAttendee(id) {
   return {
@@ -8,16 +6,16 @@ function generateAttendee(id) {
     name: `Attendee #${id}`,
     eventId: 23,
     availableDates: [
-                      date(2016, 1, 10),
-                      date(2016, 1, 11),
-                      date(2016, 1, 12),
-                      date(2016, 1, 13),
-                      date(2016, 1, 14),
-                      date(2016, 1, 15),
-                      date(2016, 1, 16),
-                      date(2016, 1, 17),
-                      date(2016, 2, 3),
-                      date(2016, 2, 8)
+                      moment('2016-2-10'),
+                      moment('2016-2-11'),
+                      moment('2016-2-12'),
+                      moment('2016-2-13'),
+                      moment('2016-2-14'),
+                      moment('2016-2-15'),
+                      moment('2016-2-16'),
+                      moment('2016-2-17'),
+                      moment('2016-3-3'),
+                      moment('2016-3-8')
   ]};
 }
 

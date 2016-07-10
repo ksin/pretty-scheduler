@@ -1,3 +1,4 @@
+/* globals moment */
 import moduleForIntegration from '../../helpers/module-for-integration';
 import hbs from 'htmlbars-inline-precompile';
 import { test } from 'ember-qunit';
@@ -5,9 +6,9 @@ import { test } from 'ember-qunit';
 moduleForIntegration('Integration | Component | attendee-month', {
   beforeEach() {
     this.set('month', 1);
-    this.set('startDate', new Date(2016, 1, 10));
-    this.set('endDate', new Date(2016, 2, 1));
-    this.set('availableDates', [ new Date(2016,1,10) ]);
+    this.set('startDate', moment('2016-2-10'));
+    this.set('endDate', moment('2016-3-1'));
+    this.set('availableDates', [ moment('2016-2-10') ]);
 
     this.render(hbs`
       {{attendee-month

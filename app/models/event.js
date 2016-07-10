@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
@@ -8,8 +9,8 @@ export default Model.extend({
   details: attr('string'),
   location: attr('string'),
   secret: attr('string'), // temp | authentication should be done on server, obviously.
-  startDate: attr('date'),
-  endDate: attr('date'),
+  startDate: attr('utc'),
+  endDate: attr('utc'),
   attendees: hasMany('attendee'),
 
   /**
@@ -19,8 +20,8 @@ export default Model.extend({
   */
   months: Ember.computed('startDate,endDate', function() {
     let months = [];
-    let startMonth = this.get('startDate').getMonth();
-    let endMonth = this.get('endDate').getMonth();
+    let startMonth = this.get('startDate').month();
+    let endMonth = this.get('endDate').month();
 
     if (endMonth < startMonth) {
       for(let a = startMonth; a < 12; a++) {
@@ -50,7 +51,7 @@ export default Model.extend({
     dateFrequency["max"] = 1;
     this.get('attendees').forEach((attendee) => {
       attendee.get('availableDates').forEach((dateOrString) => {
-        let date = new Date(dateOrString); // ensures coercion to date type
+        let date = moment(dateOrString); // ensures coercion to moment date
         if (dateFrequency[date]) {
           dateFrequency[date] = dateFrequency[date] + 1;
           if (dateFrequency[date] > dateFrequency["max"]) {

@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 
 const MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -13,10 +14,10 @@ export default Ember.Component.extend({
     let month = this.get('month');
     let startDate = this.get('startDate');
     let endDate = this.get('endDate');
-    if (month < startDate.getMonth()) {
-      return endDate.getFullYear();
+    if (month < startDate.month()) {
+      return endDate.year();
     }
-    return startDate.getFullYear();
+    return startDate.year();
   }),
 
   /**
@@ -30,23 +31,22 @@ export default Ember.Component.extend({
   daysInMonth: Ember.computed('month,year', function() {
     let month = this.get('month');
     let year = parseInt(this.get('year'));
-    let date = new Date(year, month, 1);
+    let date = moment(`${year}-${month+1}-1`);
     let days = [];
-    days.push(this.preFirstDay(date.getDay()));
+    days.push(this.preFirstDay(date.day()));
 
-    while (date.getMonth() === month) {
-      days[days.length-1].push(new Date(date));
+    while (date.month() === month) {
+      days[days.length-1].push(moment(date));
 
-      if (date.getDay() === 6) {
-        date.setDate(date.getDate() + 1);
-        if (date.getDate() !== 1) {
+      if (date.day() === 6) {
+        date.add('days', 1);
+        if (date.day() !== 1) {
           days.push([]);
         }
       } else {
-        date.setDate(date.getDate() + 1);
+        date.add('day', 1);
       }
     }
-
     return days;
   }),
 

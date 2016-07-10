@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -26,13 +27,13 @@ export default Ember.Component.extend({
   isValidDateRange: Ember.computed('startDate,endDate', function() {
     let startDate = this.get('startDate');
     let endDate = this.get('endDate');
-    let maxDate = new Date(startDate.getFullYear(), startDate.getMonth() + 2, 0);
+    let maxDate = moment(new Date(startDate.year(), startDate.month() + 2, 0));
     return startDate <= endDate && endDate <= maxDate;
   }),
 
   hasDates: Ember.computed('startDate,endDate', function() {
-    return Ember.typeOf(this.get('startDate')) === 'date' &&
-            Ember.typeOf(this.get('endDate')) === 'date';
+    return moment.isMoment(this.get('startDate')) &&
+            moment.isMoment(this.get('endDate'));
   }),
 
   // because we should reward people for filling in everything ;)
@@ -57,10 +58,10 @@ export default Ember.Component.extend({
 
   actions: {
     selectStartDate(date) {
-      this.set('startDate', date);
+      this.set('startDate', moment(date));
     },
     selectEndDate(date) {
-      this.set('endDate', date);
+      this.set('endDate', moment(date));
     },
 
     createEvent() {

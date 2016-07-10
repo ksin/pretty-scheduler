@@ -1,11 +1,12 @@
 import Ember from 'ember';
 import CalendarDayComponent from './calendar-day';
+import containsDate from '../utils/contains-date';
 
 export default CalendarDayComponent.extend({
   classNameBindings: ['available:month-calendar__day--available'],
 
-  available: Ember.computed('availableTimes.[],date', function() {
-    if (Ember.typeOf(this.get('date')) !== 'date') { return; }
-    return this.get('availableTimes').contains(this.get('date').getTime());
+  available: Ember.computed('availableMoments.[],isDateType,date', function() {
+    if (!this.get('isDateType')) { return; }
+    return containsDate(this.get('availableMoments'), this.get('date'));
   })
 });

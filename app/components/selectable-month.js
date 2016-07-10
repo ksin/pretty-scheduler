@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import MonthCalendarComponent from './month-calendar';
+import containsDate from '../utils/contains-date';
 
 export default MonthCalendarComponent.extend({
   classNames: ['month-calendar--selectable'],
@@ -10,7 +11,7 @@ export default MonthCalendarComponent.extend({
 
   actions: {
     clickedDate(date) {
-      if (this.get('selectedDates').contains(date)) {
+      if (containsDate(this.get('selectedDates'), date)) {
         this.get('selectedDates').removeObject(date);
       } else {
         this.get('selectedDates').pushObject(date);

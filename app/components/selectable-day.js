@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import CalendarDayComponent from './calendar-day';
+import containsDate from '../utils/contains-date';
 
 export default CalendarDayComponent.extend({
   classNameBindings: ['selectable', 'selected:month-calendar__day--selected'],
@@ -20,6 +21,6 @@ export default CalendarDayComponent.extend({
   }),
 
   selected: Ember.computed('selectedDates.[],date', function() {
-    return this.get('selectedDates').contains(this.get('date'));
+    return containsDate(this.get('selectedDates'), this.get('date'));
   })
 });
