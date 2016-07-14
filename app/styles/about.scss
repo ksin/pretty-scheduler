@@ -19,7 +19,7 @@
     }
 
     &:hover {
-      @include transition-all;
+      @include transition-all-quick;
       border-color: darken($pastel-blue, 20%);
       color: darken($pastel-blue, 20%);
     }
