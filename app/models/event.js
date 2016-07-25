@@ -43,25 +43,24 @@ export default Model.extend({
     Ideally, we can expire the cached value when a user
     interaction leads to an insertion/deletion to an attendees'
     availableDates. However, 'attendees@each.availableDates.[]'
-    is an invalid dependent key. It is a little soon to over optimize,
-    so this note is a reminder for us to address this later.
+    is an invalid dependent key. This may result in a bug with a
+    later feature (particularly editing availableDates of an attendee),
+    but otherwise it is a little too soon to over optimize.
+    This note is a reminder for us to address this eventually.
   */
   dateFrequency: Ember.computed('attendees.@each.availableDates', function() {
     let dateFrequency = {};
-    dateFrequency["max"] = 1;
     this.get('attendees').forEach((attendee) => {
       attendee.get('availableDates').forEach((dateOrString) => {
         let date = moment.utc(dateOrString); // ensures coercion to moment date
         if (dateFrequency[date]) {
           dateFrequency[date] = dateFrequency[date] + 1;
-          if (dateFrequency[date] > dateFrequency["max"]) {
-            dateFrequency["max"] = dateFrequency[date];
-          }
         } else {
           dateFrequency[date] = 1;
         }
       });
     });
+    dateFrequency["max"] = this.get('attendees.length');
     return dateFrequency;
   })
 });
