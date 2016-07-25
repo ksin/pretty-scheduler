@@ -16,6 +16,8 @@
   {{#each week as |date|}}
     {{attendee-day
         date=date
+        startDate=startDate
+        endDate=endDate
         availableMoments=availableMoments}}
   {{/each}}
   </div>

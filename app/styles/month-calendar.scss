@@ -47,13 +47,16 @@
       font-size: 1em;
     }
 
-    &--unselectable {
+    &--out-range {
       color: lighten(black, 70%);
+    }
+
+    &--in-range {
+      color: lighten($sasuke-blue, 5%);
     }
 
     &--selectable {
       cursor: pointer;
-      color: lighten($sasuke-blue, 5%);
 
       &:hover {
         background-color: lighten($sasuke-blue, 5%);

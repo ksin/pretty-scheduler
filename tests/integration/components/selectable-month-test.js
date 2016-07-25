@@ -29,7 +29,7 @@ test('renders calendar month', function(assert) {
 
 test('only dates within startDate and endDate range are selectable', function(assert) {
   assert.ok(this.$('.month-calendar__day:contains(11)').hasClass('month-calendar__day--selectable'));
-  assert.ok(this.$('.month-calendar__day:contains(9)').hasClass('month-calendar__day--unselectable'));
+  assert.ok(this.$('.month-calendar__day:contains(9)').hasClass('month-calendar__day--out-range'));
 });
 
 test('clicking selectable date', function(assert) {
@@ -46,6 +46,8 @@ test('clicking selectable date', function(assert) {
 });
 
 test('clicking unselectable date', function(assert) {
-  this.$('.month-calendar__day--non:contains(9)').click();
+  this.$('.month-calendar__day--non').click();
+  assert.equal(this.get('updateDatesCalled'), 0, "Doesn't send 'onDateClick'");
+  this.$('.month-calendar__day--out-range:contains(9)').click();
   assert.equal(this.get('updateDatesCalled'), 0, "Doesn't send 'onDateClick'");
 });

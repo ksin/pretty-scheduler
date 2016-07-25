@@ -6,9 +6,16 @@ export default Ember.Component.extend({
   tagName: "div",
 
   classNames: ['month-calendar__day'],
+  classNameBindings: ['isDateType::month-calendar__day--non', 'inRange:month-calendar__day--in-range:month-calendar__day--out-range'],
 
   isDateType: Ember.computed('date', function() {
     return moment.isMoment(this.get('date'));
+  }),
+
+  inRange: Ember.computed('startDate,endDate,isDateType,date', function() {
+    return this.get('isDateType') &&
+            this.get('date').isSameOrAfter(this.get('startDate')) &&
+            this.get('date').isSameOrBefore(this.get('endDate'));
   }),
 
   displayDate: Ember.computed('date,isDateType', function() {
