@@ -48,6 +48,7 @@
     "ember-route-action-helper": "0.3.2",
     "ember-welcome-page": "^1.0.1",
     "liquid-fire": "0.23.1",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.1",
+    "phantomjs-prebuilt": "^2.1.8"
   }
 }
