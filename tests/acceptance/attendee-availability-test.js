@@ -5,29 +5,29 @@ moduleForAcceptance('Acceptance | attendee availability', {
   beforeEach() {
     server.create('event', {
       name: "Chuunin Exam",
-      startDate: '2016-2-10',
-      endDate: '2016-3-31'}
+      startDate: '2016-02-10',
+      endDate: '2016-03-31'}
     );
     server.create('attendee', {
       name: "Ino",
       eventId: 1,
       availableDates: [
-        '2016-2-10',
-        '2016-2-11',
-        '2016-2-12'
+        '2016-02-10',
+        '2016-02-11',
+        '2016-02-12'
     ]});
     server.create('attendee', {
       name: "Shika",
       eventId: 1,
       availableDates: [
-        '2016-2-10',
-        '2016-2-11'
+        '2016-02-10',
+        '2016-02-11'
     ]});
     server.create('attendee', {
       name: "Cho",
       eventId: 1,
       availableDates: [
-        '2016-2-10'
+        '2016-02-10'
     ]});
   }
 });
@@ -35,8 +35,8 @@ moduleForAcceptance('Acceptance | attendee availability', {
 test("cannot view availabilities if no attendees exist for event", function(assert) {
   server.create('event', {
     name: "Finding Dory",
-    startDate: '2016-2-10',
-    endDate: '2016-3-31'}
+    startDate: '2016-02-10',
+    endDate: '2016-03-31'}
   );
 
   visit('/events/2');

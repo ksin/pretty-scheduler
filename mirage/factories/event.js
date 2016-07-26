@@ -15,7 +15,7 @@ export default Factory.extend({
   endDate() {
     let date = this.startDate;
     let rand30 = Math.random() * (30 - 1) + 1;
-    date.add('days', rand30);
+    date.add(rand30, 'day');
     return moment.utc(date).toISOString();
   }
 });

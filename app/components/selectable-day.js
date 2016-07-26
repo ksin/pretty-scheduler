@@ -13,7 +13,7 @@ export default CalendarDayComponent.extend({
 
   selectable: Ember.computed.reads('inRange'),
 
-  selected: Ember.computed('selectedDates.[],date', function() {
-    return containsDate(this.get('selectedDates'), this.get('date'));
+  selected: Ember.computed('selectedDates.[],date,isDateType', function() {
+    return this.get('isDateType') && containsDate(this.get('selectedDates'), this.get('date'));
   })
 });

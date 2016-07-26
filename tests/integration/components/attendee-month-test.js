@@ -6,9 +6,9 @@ import { test } from 'ember-qunit';
 moduleForIntegration('Integration | Component | attendee-month', {
   beforeEach() {
     this.set('month', 1);
-    this.set('startDate', moment.utc('2016-2-10'));
-    this.set('endDate', moment.utc('2016-3-1'));
-    this.set('availableDates', [ moment.utc('2016-2-10') ]);
+    this.set('startDate', moment.utc('2016-02-10'));
+    this.set('endDate', moment.utc('2016-03-1'));
+    this.set('availableDates', [ moment.utc('2016-02-10') ]);
 
     this.render(hbs`
       {{attendee-month

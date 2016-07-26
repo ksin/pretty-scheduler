@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   daysInMonth: Ember.computed('month,year', function() {
     let month = this.get('month');
     let year = parseInt(this.get('year'));
-    let date = moment.utc(`${year}-${month+1}-1`);
+    let date = moment.utc(`${year}-0${month+1}-1`);
     let days = [];
     days.push(this.preFirstDay(date.day()));
 
@@ -39,12 +39,12 @@ export default Ember.Component.extend({
       days[days.length-1].push(moment.utc(date));
 
       if (date.day() === 6) {
-        date.add('days', 1);
+        date.add(1, 'day');
         if (date.day() !== 1) {
           days.push([]);
         }
       } else {
-        date.add('day', 1);
+        date.add(1, 'day');
       }
     }
     return days;
