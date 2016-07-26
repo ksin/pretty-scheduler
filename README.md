@@ -1,7 +1,14 @@
 # Pretty-scheduler
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+[![Build Status](https://travis-ci.org/ksin/pretty-scheduler.svg?branch=master)](https://travis-ci.org/ksin/pretty-scheduler)
+
+[Pretty Scheduler](http://www.prettyscheduler.com/) - a scheduler app for finding common availabilities among your friends. Create an event and share it with your friends to see what dates work best for everyone!
+
+To see an example event, visit: [/events/23](http://www.prettyscheduler.com/events/23)
+
+This is still very much a WIP. The client-side server is backed by ember-cli-mirage, so none of your data will be persisted after you leave. Unfortunately, that also means this app isn't very useful yet.
+
+Dog gifs are created by foremost dog gif expert Olivia Huynh.
 
 ## Prerequisites
 
